@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ab22edf-fdb1-472d-b050-241932631e10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/mapEtCoordonnees.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/mapEtCoordonnees.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/qrindex.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/qrindex.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/MTLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/MTLLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/MapControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/MapControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/OBJLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/OBJLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/OBJMTLLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/OBJMTLLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/OrbitControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bleu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bleu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/dat.gui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/dat.gui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jaune.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jaune.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery-3.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/rouge.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/rouge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/stats.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/stats.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/three.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/three.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/vert.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/violet.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/violet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceBleu.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceBleu.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceBleu.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceBleu.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceJaune.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceJaune.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceJaune.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceJaune.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceRouge.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceRouge.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceRouge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceRouge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceVert.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceVert.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceVert.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceVert.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceViolet.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceViolet.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceViolet.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceViolet.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/slicedModels.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/slicedModels.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/slicedModels.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/slicedModels.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/amphi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/amphi.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,20 +43,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="180">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/index.css">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+            <state relative-caret-position="150">
+              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/amphi.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/bleu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="25" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -81,6 +90,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/css/index.css" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/amphi.blade.php" />
       </list>
     </option>
   </component>
@@ -189,30 +199,23 @@
             <path>
               <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
               <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
               <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
-              <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
               <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,16 +237,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/js" />
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/resources/models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/public/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -275,7 +278,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5623000" />
+    <option name="totallyTimeSpent" value="6334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -287,9 +290,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1347" height="741" extended-state="4" />
+    <frame x="0" y="0" width="1337" height="743" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26133743" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26100385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -304,7 +307,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3273906" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2996795" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -322,13 +325,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/bleu.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/bleu.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/models/IndiceBleu.mtl">
+    <entry file="file://$PROJECT_DIR$/public/models/IndiceBleu.mtl">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.html">
@@ -345,10 +345,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/bleu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="180">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/amphi.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
