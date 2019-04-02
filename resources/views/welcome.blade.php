@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>ENIGME DE L'AMPHITHEATRE</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -14,40 +14,6 @@
 
     </head>
     <body>
-
-
-    <div class="container">
-        <h3>Choisissez votre équipe !</h3>
-
-        <span class="red box" onclick="location.href='rouge.html';"></span><span class="violet box" onclick="location.href='violet.html';"></span><span class="green box" onclick="location.href='vert.html';"></span><span class="blue box" onclick="location.href='bleu.html';"></span><span
-                class="yellow box" onclick="location.href='jaune.html';"></span>
-    </div>
-
-    <h2>Ou testez maintenant sur VOTRE téléphone !</h2>
-
-    <img src="{{asset('img/qrindex.png')}}" alt="qr code">
-
-
-    <script src="{{asset('scripts/index.js')}}"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <div class="flex-center position-ref full-height">
@@ -69,19 +35,23 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Choisissez votre équipe !
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ url('/amphi') }}">BLEU</a>
+                    <a href="{{ url('/amphi') }}">ROUGE</a>
+                    <a href="{{ url('/amphi') }}">VERT</a>
+                    <a href="{{ url('/amphi') }}">JAUNE</a>
+                    <a href="{{ url('/amphi') }}">VIOLET</a>
                 </div>
             </div>
+
         </div>
+
+        <script src="{{asset('scripts/index.js')}}"></script>
+
+
+
     </body>
 </html>

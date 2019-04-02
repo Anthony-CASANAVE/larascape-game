@@ -35,6 +35,9 @@ h3, p{
 h2{
     color: lightgray;
 }
+.title{
+    color: #ffffff;
+}
 
 html, body {
     font-family: 'Nunito', sans-serif;
