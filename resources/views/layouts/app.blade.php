@@ -43,11 +43,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/') }}">{{ __("Retourner sur la page d'accueil") }}</a>
                             </li>
-                            @if (Route::has('register'))
+                            {{--@if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __("S'enregistrer") }}</a>
                                 </li>
-                            @endif
+                            @endif--}}
                         @else
                             <li class="nav-item dropdown">
                                 <a>

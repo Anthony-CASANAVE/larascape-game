@@ -25,9 +25,9 @@
                     @else
                         <a class="grey" href="{{ route('login') }}">Accéder au panneau d'administration</a>
 
-                        @if (Route::has('register'))
+                        {{--@if (Route::has('register'))
                             <a class="grey" href="{{ route('register') }}">S'enregistrer</a>
-                        @endif
+                        @endif--}}
                     @endauth
                 </div>
             @endif

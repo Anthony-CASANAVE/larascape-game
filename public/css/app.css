@@ -70,9 +70,9 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #212529;
+  color: white;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: black;
 }
 
 [tabindex="-1"]:focus {
@@ -2557,14 +2557,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #7a3234;
+  border-color: #5d292b;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #227dc7;
-  border-color: #2176bd;
+  background-color: #7a1b1f;
+  border-color: #69191d;
 }
 
 .btn-primary:focus,
@@ -3149,7 +3149,7 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #3490dc;
+  color: white;
   text-decoration: none;
 }
 
@@ -4635,7 +4635,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  color: white;
 }
 
 .navbar-light .navbar-brand:hover,
@@ -4644,7 +4644,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -4742,7 +4742,7 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #262626;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -10656,7 +10656,7 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #262626;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
