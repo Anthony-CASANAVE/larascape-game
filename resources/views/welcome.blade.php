@@ -20,12 +20,13 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a class="grey" href="{{ url('/home') }}">Panneau d'administration</a>
+                        <a class="grey" href="{{ url('/logout') }}"> Déconnexion </a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a class="grey" href="{{ route('login') }}">Accéder au panneau d'administration</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a class="grey" href="{{ route('register') }}">S'enregistrer</a>
                         @endif
                     @endauth
                 </div>
@@ -34,16 +35,16 @@
 
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md ">
                     Choisissez votre équipe !
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/amphi') }}">BLEU</a>
-                    <a href="{{ url('/amphi') }}">ROUGE</a>
-                    <a href="{{ url('/amphi') }}">VERT</a>
-                    <a href="{{ url('/amphi') }}">JAUNE</a>
-                    <a href="{{ url('/amphi') }}">VIOLET</a>
+                    <a class="blue" href="{{ url('/amphi') }}">BLEU</a>
+                    <a class="red" href="{{ url('/amphi') }}">ROUGE</a>
+                    <a class="green" href="{{ url('/amphi') }}">VERT</a>
+                    <a class="yellow" href="{{ url('/amphi') }}">JAUNE</a>
+                    <a class="violet" href="{{ url('/amphi') }}">VIOLET</a>
                 </div>
             </div>
 
