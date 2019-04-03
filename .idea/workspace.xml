@@ -3,12 +3,46 @@
   <component name="ChangeListManager">
     <list default="true" id="7ab22edf-fdb1-472d-b050-241932631e10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< refs/remotes/origin/master
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+=======
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/public/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceBleu.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceBleu.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceBleu.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceBleu.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceJaune.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceJaune.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceJaune.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceJaune.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceRouge.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceRouge.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceRouge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceRouge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceVert.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceVert.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceVert.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceVert.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceViolet.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceViolet.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceViolet.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceViolet.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/slicedModels.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/slicedModels.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/slicedModels.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/slicedModels.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceBleu.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceBleu.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceBleu.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceBleu.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceJaune.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceJaune.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceJaune.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceJaune.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceRouge.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceRouge.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceRouge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceRouge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceVert.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceVert.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceVert.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceVert.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceViolet.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceViolet.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/IndiceViolet.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/IndiceViolet.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/slicedModels.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/slicedModels.mtl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/models/slicedModels.obj" beforeDir="false" afterPath="$PROJECT_DIR$/public/models/slicedModels.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/amphi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/amphi.blade.php" afterDir="false" />
+>>>>>>> Stashed changes
+>>>>>>> Auto stash before rebase of "origin/master"
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +73,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< refs/remotes/origin/master
             <state relative-caret-position="300">
               <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+=======
+<<<<<<< Updated upstream
+            <state relative-caret-position="195">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
+=======
+            <state relative-caret-position="255">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="180">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="46" />
+>>>>>>> Stashed changes
+>>>>>>> Auto stash before rebase of "origin/master"
             </state>
           </provider>
         </entry>
@@ -226,8 +272,19 @@
             <path>
               <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
               <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
+<<<<<<< refs/remotes/origin/master
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Auto stash before rebase of "origin/master"
             </path>
             <path>
               <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
@@ -255,7 +312,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< refs/remotes/origin/master
       <recent name="$PROJECT_DIR$/routes" />
+=======
+>>>>>>> Auto stash before rebase of "origin/master"
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/public/js" />
     </key>
@@ -291,14 +351,27 @@
       <updated>1554105335503</updated>
       <workItem from="1554105476880" duration="1820000" />
       <workItem from="1554113512261" duration="1417000" />
+<<<<<<< refs/remotes/origin/master
       <workItem from="1554119307506" duration="2386000" />
       <workItem from="1554278707281" duration="15000" />
       <workItem from="1554278735707" duration="14930000" />
+=======
+      <workItem from="1554119307506" duration="4062000" />
+>>>>>>> Auto stash before rebase of "origin/master"
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< refs/remotes/origin/master
     <option name="totallyTimeSpent" value="26347000" />
+=======
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="11295000" />
+=======
+    <option name="totallyTimeSpent" value="7299000" />
+    <option name="totallyTimeSpent" value="6334000" />
+>>>>>>> Stashed changes
+>>>>>>> Auto stash before rebase of "origin/master"
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -310,16 +383,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< refs/remotes/origin/master
     <frame x="0" y="-1" width="1366" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21752267" />
+=======
+    <frame x="0" y="0" width="1347" height="741" extended-state="5" />
+    <frame x="0" y="0" width="1337" height="743" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26133743" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26100385" />
+>>>>>>> Auto stash before rebase of "origin/master"
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32901135" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32901135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -328,7 +410,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+<<<<<<< refs/remotes/origin/master
       <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2996795" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3273906" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2996795" />
+>>>>>>> Auto stash before rebase of "origin/master"
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -385,7 +472,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< refs/remotes/origin/master
         <state relative-caret-position="-1245" />
+=======
+<<<<<<< Updated upstream
+        <state relative-caret-position="195">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+=======
+        <state relative-caret-position="255">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="180">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="46" />
+>>>>>>> Stashed changes
+        </state>
+>>>>>>> Auto stash before rebase of "origin/master"
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/view.php">

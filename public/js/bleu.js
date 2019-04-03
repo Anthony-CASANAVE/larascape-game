@@ -7,7 +7,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 
 document.getElementById('webgl').appendChild(renderer.domElement);
 
-controls = new THREE.MapControls( camera, renderer.domElement );
+controls = new THREE.OrbitControls( camera, renderer.domElement );
 controls.enableDamping = false;
 controls.dampingFactor = 0.25;
 controls.enableRotate = false;
@@ -16,6 +16,9 @@ controls.maxDistance = 100;
 controls.minDistance = 10;
 controls.enableZoom = true;
 controls.maxPolarAngle = Math.PI / 2;
+controls.minPolarAngle = Math.PI / 2;
+controls.maxAzimuthAngle = 0;
+controls.minAzimuthAngle = 0;
 
 
 
@@ -193,7 +196,6 @@ window.addEventListener('resize', function(){
 });
 
 camera.position.z = 30;
-camera.rotation.set( 0, 0, 0 );
 
 //Spawning lights
 scene.add( ambientLight );
@@ -218,50 +220,40 @@ importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11, "indiceBleu");
 importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11, "indiceBleu");
 
 
-
+var xAxis;
+var yAxis;
+var zAxis;
 
 var animate = function () {
+    xAxis = camera.position.x;
+    yAxis = camera.position.y;
+    zAxis = camera.position.z;
+
+    if(camera.position.x >= 10){
+        xAxis = -9;
+
+    }
+
+    if(camera.position.x <= -10){
+        xAxis = 9;
+    }
+
+    if(camera.position.y >= 10){
+        yAxis = -9;
+    }
+
+    if(camera.position.y <= -10){
+        yAxis = 9;
+    }
+
+
     requestAnimationFrame( animate );
-
-    if(camera.position.x > 2000){
-        camera.position.x = 0;
-        camera.rotation.set( 0, 0, 0 );
-        controls.update();
-
-    }
-
-    if(camera.position.x < -2000){
-        camera.position.x = 0;
-        camera.rotation.set( 0, 0, 0 );
-        controls.update();
-    }
-
-    if(camera.position.y > 2000){
-        camera.position.y = 0;
-        camera.rotation.set( 0, 0, 0 );
-        controls.update();
-    }
-
-    if(camera.position.y < -2000){
-        camera.position.y = 0;
-        camera.rotation.set( 0, 0, 0 );
-        controls.update();
-    }
-    if(camera.position.z > 100){
-        camera.position.z = 25;
-        camera.rotation.set( 0, 0, 0 );
-        controls.distance = 25;
-        controls.update();
-    }
-
-    if(camera.position.z < 10){
-        camera.position.z = 20;
-        camera.rotation.set( 0, 0, 0 );
-        controls.distance = 20;
-        controls.update();
-    }
-
-    camera.rotation.set( 0, 0, 0 );
+    camera.position.set( xAxis, yAxis, zAxis );
+    // camera.position.x = xAxis;
+    // camera.position.y = yAxis;
+    // camera.position.z = zAxis;
+    console.log("x : " + camera.position.x + ", y : " + camera.position.y + ", z : " + camera.position.z);
+    console.log("xAxis : " + xAxis + ", yAxis : " + yAxis + ", zAxis : " + zAxis);
     controls.update();
     renderer.render(scene, camera);
 };
@@ -269,5 +261,4 @@ var animate = function () {
 
 
 animate();
-controls.update();
 

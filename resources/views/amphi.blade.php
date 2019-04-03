@@ -14,13 +14,11 @@
 <script src="{{asset('js/dat.gui.min.js')}}"></script>
 
 <script src="{{asset('js/three.js')}}"></script>
-<!--<script src="http://mrdoob.github.com/three.js/build/three.min.js"></script>-->
 
 <script src="{{asset('js/OrbitControls.js')}}"></script>
-<script src="{{asset('js/MapControls.js')}}"></script>
+{{--<script src="{{asset('js/MapControls.js')}}"></script>--}}
 <script src="{{asset('js/MTLLoader.js')}}"></script>
 <script src="{{asset('js/OBJLoader.js')}}"></script>
-<!--<script src="scripts/OBJMTLLoader.js"></script>-->
 <script src="{{asset('js/bleu.js')}}"></script>
 {{--<script src="{{asset('js/rouge.js')}}"></script>--}}
 {{--<script src="{{asset('js/jaune.js')}}"></script>--}}
