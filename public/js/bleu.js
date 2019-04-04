@@ -1,6 +1,8 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
 
+var clock = new THREE.Clock;
+
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 
@@ -50,18 +52,18 @@ var rangY11 = 77.16;
 var rangY12 = 77.16;
 
 
-var rangZ1 = -1.3;
-var rangZ2 = -2.6;
-var rangZ3 = -3.9;
-var rangZ4 = -5.2;
-var rangZ5 = -6.5;
-var rangZ6 = -7.8;
-var rangZ7 = -9;
-var rangZ8 = -10.3;
-var rangZ9 = -11.6;
-var rangZ10 = -12.9;
-var rangZ11 = -14.2;
-var rangZ12 = -14.2;
+var rangZ1 = 1.3;
+var rangZ2 = -0.4;
+var rangZ3 = -1.7;
+var rangZ4 = -3.0;
+var rangZ5 = -4.3;
+var rangZ6 = -5.6;
+var rangZ7 = -6.8;
+var rangZ8 = -8.1;
+var rangZ9 = -9.4;
+var rangZ10 = -10.7;
+var rangZ11 = -12.0;
+var rangZ12 = -12.0;
 //Prévoir 38 axes X
 var rangX1 = -394.75;
 var rangX2 = -384.5;
@@ -92,7 +94,7 @@ var rangX24 = -80.5;
 var rangX25 = -70.25;
 var rangX26 = -60;
 var rangX27 = -49.75;
-var rangX28 = -35.5;
+var rangX28 = -39.5;
 var rangX29 = -29.25;
 var rangX30 = -19;
 var rangX31 = -8.75;
@@ -124,9 +126,10 @@ var MTLIndVi = 'models/IndiceViolet.mtl';
 
 //Importing OBL and MTL to build models
 
+var objectsToRotate = [];
 var mtlLoader = new THREE.MTLLoader();
 
-function importThings(objFile, mtlFile, posiX, posiY, posiZ, name){
+function importThings(objFile, mtlFile, posiX, posiY, posiZ){
 
     mtlLoader.load( mtlFile, function( materials ) {
 
@@ -143,9 +146,11 @@ function importThings(objFile, mtlFile, posiX, posiY, posiZ, name){
             name.position.y = posiY;
             name.position.z = posiZ;
             name.rotateX( Math.PI / 3 );
+            name.matrixAutoUpdate  = true;
             name.receiveShadow = true;
             name.castShadow = true;
 
+            objectsToRotate.push(name);
 
             scene.add( name );
         } );
@@ -206,23 +211,24 @@ scene.add( backLight );
 importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
 
 //Indices équipe bleu
-importThings(OBJIndBl, MTLIndBl, rangX8, rangY1, rangZ1, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX10, rangY4, rangZ4, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX25, rangY4, rangZ4, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11, "indiceBleu");
-importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11, "indiceBleu");
+importThings(OBJIndBl, MTLIndBl, rangX8, rangY1, rangZ1);
+importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
+importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
+importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
+importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7);
+importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9);
+importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9);
+importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11);
+importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11);
+importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
 
 
 
-
+//Animating things in the scene.
 var animate = function () {
     requestAnimationFrame( animate );
 
+    //Teleporting the camera when reaching set boundaries.
     if(controls.target.x > 90){
         controls.target.x = -395;
         camera.position.x = -395;
@@ -243,6 +249,15 @@ var animate = function () {
         controls.target.y = 90;
         camera.position.y = 90;
     }
+
+
+    //Making tips rotating on themselves at set speed.
+    for (var i = 0; i < objectsToRotate.length; i++) {
+        objectsToRotate[i].rotation.x = clock.getElapsedTime() * 2;
+        objectsToRotate[i].rotation.y = clock.getElapsedTime() * 4;
+        objectsToRotate[i].rotation.z = clock.getElapsedTime() * 8;
+    }
+
 
     controls.update();
     renderer.render(scene, camera);
