@@ -16,14 +16,10 @@
 <script src="{{asset('js/three.js')}}"></script>
 
 <script src="{{asset('js/OrbitControls.js')}}"></script>
-{{--<script src="{{asset('js/MapControls.js')}}"></script>--}}
 <script src="{{asset('js/MTLLoader.js')}}"></script>
 <script src="{{asset('js/OBJLoader.js')}}"></script>
+
 <script src="{{asset('js/bleu.js')}}"></script>
-{{--<script src="{{asset('js/rouge.js')}}"></script>--}}
-{{--<script src="{{asset('js/jaune.js')}}"></script>--}}
-{{--<script src="{{asset('js/vert.js')}}"></script>--}}
-{{--<script src="{{asset('js/violet.js')}}"></script>--}}
 
 
 </body>

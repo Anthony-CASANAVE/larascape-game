@@ -16,13 +16,10 @@ controls.maxDistance = 100;
 controls.minDistance = 10;
 controls.enableZoom = true;
 controls.maxPolarAngle = Math.PI / 2;
-controls.minPolarAngle = Math.PI / 2;
-controls.maxAzimuthAngle = 0;
-controls.minAzimuthAngle = 0;
 
 
 
-scene.fog = new THREE.FogExp2( 0xcccccc, 0.018 );
+// scene.fog = new THREE.FogExp2( 0xcccccc, 0.018 );
 
 
 renderer.physicallyCorrectLights = true;
@@ -196,12 +193,13 @@ window.addEventListener('resize', function(){
 });
 
 camera.position.z = 30;
+camera.rotation.set( 0, 0, 0 );
 
 //Spawning lights
 scene.add( ambientLight );
-scene.add(keyLight);
-scene.add(fillLight);
-scene.add(backLight);
+scene.add( keyLight );
+scene.add( fillLight );
+scene.add( backLight );
 
 
 //Spawning models
@@ -220,45 +218,39 @@ importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11, "indiceBleu");
 importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11, "indiceBleu");
 
 
-var xAxis;
-var yAxis;
-var zAxis;
+
 
 var animate = function () {
-    xAxis = camera.position.x;
-    yAxis = camera.position.y;
-    zAxis = camera.position.z;
-
-    if(camera.position.x >= 10){
-        xAxis = -9;
-
-    }
-
-    if(camera.position.x <= -10){
-        xAxis = 9;
-    }
-
-    if(camera.position.y >= 10){
-        yAxis = -9;
-    }
-
-    if(camera.position.y <= -10){
-        yAxis = 9;
-    }
-
-
     requestAnimationFrame( animate );
-    camera.position.set( xAxis, yAxis, zAxis );
-    // camera.position.x = xAxis;
-    // camera.position.y = yAxis;
-    // camera.position.z = zAxis;
-    console.log("x : " + camera.position.x + ", y : " + camera.position.y + ", z : " + camera.position.z);
-    console.log("xAxis : " + xAxis + ", yAxis : " + yAxis + ", zAxis : " + zAxis);
+
+    if(controls.target.x > 90){
+        controls.target.x = -395;
+        camera.position.x = -395;
+
+    }
+
+    if(controls.target.x < -395){
+        controls.target.x = 90;
+        camera.position.x = 90;
+    }
+
+    if(controls.target.y > 90){
+        controls.target.y = -150;
+        camera.position.y = -150;
+    }
+
+    if(controls.target.y < -150){
+        controls.target.y = 90;
+        camera.position.y = 90;
+    }
+
     controls.update();
     renderer.render(scene, camera);
+
 };
 
 
 
 animate();
+controls.update();
 
