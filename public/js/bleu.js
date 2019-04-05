@@ -7,7 +7,7 @@ var scene, camera, clock, renderer, fillLight, keyLight, backLight, mtlLoader, o
     rangY1, rangY2, rangY3, rangY4, rangY5, rangY6, rangY7, rangY8, rangY9, rangY10, rangY11, rangY12,
     rangZ1, rangZ2, rangZ3, rangZ4, rangZ5, rangZ6, rangZ7, rangZ8, rangZ9, rangZ10, rangZ11, rangZ12,
 
-//Decarng model and texture variables
+//Declaring model and texture variables
     PNGFile, OBJAmphi, MTLAmphi, OBJIndBl, MTLIndBl, OBJIndJa, MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi;
 
 
@@ -176,6 +176,37 @@ function cameraEdgeTeleportControl() {
 
 
 
+function buildLights() {
+
+    //Spawning lights
+    scene.add( ambientLight );
+
+    scene.add( keyLight );
+    keyLight.position.set(-100, 0, 100);
+
+    scene.add( fillLight );
+    fillLight.position.set(100, 0, 100);
+
+    scene.add( backLight );
+    backLight.position.set(100, 0, -100).normalize();
+
+}
+
+
+function listenToWindowsSize() {
+
+    //Updating size on rotate (For mobile) and on resize.
+    window.addEventListener('resize', function(){
+        width = window.innerWidth;
+        weight = window.innerHeight;
+        renderer.setSize( width, weight );
+        camera.aspect = width / weight;
+        camera.updateProjectionMatrix();
+    });
+
+}
+
+
 
 //Making tips rotating on themselves at set degree per second.
 function tipsRotationControl() {
@@ -190,7 +221,23 @@ function tipsRotationControl() {
 
 }
 
+function buildItems(){
 
+    //Spawning models
+    importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
+
+//Blue team tips creation
+    importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
+    importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
+    importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
+    importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7);
+    importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9);
+    importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9);
+    importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11);
+    importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11);
+    importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
+
+}
 
 
 
@@ -266,7 +313,7 @@ rangX36 = 68.25;
 rangX37 = 78.5;
 rangX38 = 88.75;
 
-//Ci dessous, importer un mesh en .obj et lui appliquer les coloration basiques du .mtl. Placer tout ce qui est entre ce message et le message de la prochaine importation pour désactiver.
+//Ci dessous, importer un mesh en .C'est plus en mode "Je doit plaobj et lui appliquer les coloration basiques du .mtl. Placer tout ce qui est entre ce message et le message de la prochaine importation pour désactiver.
 
 
 PNGFile = 'img/noise.png';
@@ -291,64 +338,21 @@ MTLIndVi = 'models/IndiceViolet.mtl';
 
 
 
-
+//Add everything that needs to be loaded one time and renders it.
 init = function(){
 
+    buildLights();
 
-
-//Updating size on rotate (For mobile) and on resize.
-    window.addEventListener('resize', function(){
-        width = window.innerWidth;
-        weight = window.innerHeight;
-        renderer.setSize( width, weight );
-        camera.aspect = width / weight;
-        camera.updateProjectionMatrix();
-    });
-
-
-//Spawning lights
-    scene.add( ambientLight );
-
-    scene.add( keyLight );
-    keyLight.position.set(-100, 0, 100);
-
-    scene.add( fillLight );
-    fillLight.position.set(100, 0, 100);
-
-    scene.add( backLight );
-    backLight.position.set(100, 0, -100).normalize();
-
-
-//Spawning models
-    importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
-
-//Blue team tips creation
-    importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
-    importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
-    importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
-    importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7);
-    importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9);
-    importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9);
-    importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11);
-    importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11);
-    importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
-
-
+    buildItems();
 
 };
 
-
-
-
-
-
-
-
-//Animating things in the scene.
+//update before each frame and then renders it.
 animate = function () {
 
     requestAnimationFrame( animate );
 
+    listenToWindowsSize();
 
     cameraEdgeTeleportControl();
 
@@ -364,5 +368,4 @@ animate = function () {
 
 init();
 animate();
-controls.update();
 
