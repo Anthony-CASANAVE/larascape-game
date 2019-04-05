@@ -8,20 +8,23 @@
     float:left;
 }
 
+.grey{
+    color: grey;
+}
 .red{
-    background:#FE0801;
+    color:#FE0801;
 }
 .green{
-    background:#35FE01;
+    color:#35FE01;
 }
 .blue{
-    background:#0157FE;
+    color:#0157FE;
 }
 .yellow{
-    background:#FEEB01;
+    color:#FEEB01;
 }
 .violet{
-    background:#E301FE;
+    color:#E301FE;
 }
 body{
     text-align: center;
@@ -35,6 +38,7 @@ h3, p{
 h2{
     color: lightgray;
 }
+
 
 html, body {
     font-family: 'Nunito', sans-serif;
@@ -68,11 +72,11 @@ html, body {
 }
 
 .title {
+    color: white;
     font-size: 84px;
 }
 
 .links > a {
-    color: #636b6f;
     padding: 0 25px;
     font-size: 13px;
     font-weight: 600;
@@ -84,3 +88,5 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+
+/*ANIMATION TEXT WELCOME*/
