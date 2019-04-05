@@ -1,14 +1,36 @@
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
+//Declaring all variables except coordinates, models and textures.
+var scene, camera, clock, renderer, fillLight, keyLight, backLight, mtlLoader, objLoader, texture, fogDensity, cameraZoomValue, objectsToRotate = [], width, weight, init, animate,
 
-var clock = new THREE.Clock;
+//Declaring all coordonates X Y Z
+    rangX1, rangX2, rangX3, rangX4, rangX5, rangX6, rangX7, rangX8, rangX9, rangX10, rangX11, rangX12, rangX13, rangX14, rangX15, rangX16, rangX17, rangX18, rangX19,
+    rangX20, rangX21, rangX22, rangX23, rangX24, rangX25, rangX26, rangX27, rangX28, rangX29, rangX30, rangX31, rangX32, rangX33, rangX34, rangX35, rangX36, rangX37, rangX38,
+    rangY1, rangY2, rangY3, rangY4, rangY5, rangY6, rangY7, rangY8, rangY9, rangY10, rangY11, rangY12,
+    rangZ1, rangZ2, rangZ3, rangZ4, rangZ5, rangZ6, rangZ7, rangZ8, rangZ9, rangZ10, rangZ11, rangZ12,
 
-var renderer = new THREE.WebGLRenderer();
+//Decarng model and texture variables
+    PNGFile, OBJAmphi, MTLAmphi, OBJIndBl, MTLIndBl, OBJIndJa, MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi;
+
+
+
+
+
+
+
+
+//Setting up scene and viewport size and parameters.
+scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
-
 
 document.getElementById('webgl').appendChild(renderer.domElement);
 
+clock = new THREE.Clock;
+
+
+
+//Setting up camera controls and its options.
 controls = new THREE.OrbitControls( camera, renderer.domElement );
 controls.enableDamping = false;
 controls.dampingFactor = 0.25;
@@ -19,117 +41,29 @@ controls.minDistance = 10;
 controls.enableZoom = true;
 controls.maxPolarAngle = Math.PI / 2;
 
+camera.position.z = 30;
+camera.rotation.set( 0, 0, 0 );
 
 
-// scene.fog = new THREE.FogExp2( 0xcccccc, 0.0195 );
 
+
+
+//Setting up lights for the scene.
 
 renderer.physicallyCorrectLights = true;
-var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 2);
-keyLight.position.set(-100, 0, 100);
 
-var fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 1);
-fillLight.position.set(100, 0, 100);
-
-var backLight = new THREE.DirectionalLight(0xffffff, 2);
-backLight.position.set(100, 0, -100).normalize();
-
+keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 2);
+fillLight = new THREE.DirectionalLight(new THREE.Color('hsl(240, 100%, 75%)'), 1);
+backLight = new THREE.DirectionalLight(0xffffff, 2);
 const ambientLight = new THREE.HemisphereLight( 0xddeeff, 0x202020, 2);
 
 
-//Building variable for easy tips placing.
-var rangY1 = -132;
-var rangY2 = -111.08;
-var rangY3 = -90.16;
-var rangY4 = -69.25;
-var rangY5 = -48.33;
-var rangY6 = -27.41;
-var rangY7 = -6.5;
-var rangY8 = 14.41;
-var rangY9 = 35.33;
-var rangY10 = 56.25;
-var rangY11 = 77.16;
-var rangY12 = 77.16;
 
-
-var rangZ1 = 1.3;
-var rangZ2 = -0.4;
-var rangZ3 = -1.7;
-var rangZ4 = -3.0;
-var rangZ5 = -4.3;
-var rangZ6 = -5.6;
-var rangZ7 = -6.8;
-var rangZ8 = -8.1;
-var rangZ9 = -9.4;
-var rangZ10 = -10.7;
-var rangZ11 = -12.0;
-var rangZ12 = -12.0;
-//Prévoir 38 axes X
-var rangX1 = -394.75;
-var rangX2 = -384.5;
-var rangX3 = -374.25;
-
-var rangX4 = -338.5;
-var rangX5 = -328.25;
-var rangX6 = -318;
-var rangX7 = -307.75;
-var rangX8 = -297.5;
-var rangX9 = -287.25;
-var rangX10 = -277;
-var rangX11 = -266.75;
-var rangX12 = -256.5;
-var rangX13 = -246.25;
-var rangX14 = -236;
-var rangX15 = -225.75;
-var rangX16 = -215.5;
-var rangX17 = -205.25;
-var rangX18 = -195;
-var rangX19 = -184.75;
-
-var rangX20 = -121.5;
-var rangX21 = -111.25;
-var rangX22 = -101;
-var rangX23 = -90.75;
-var rangX24 = -80.5;
-var rangX25 = -70.25;
-var rangX26 = -60;
-var rangX27 = -49.75;
-var rangX28 = -39.5;
-var rangX29 = -29.25;
-var rangX30 = -19;
-var rangX31 = -8.75;
-var rangX32 = 1.5;
-var rangX33 = 11.75;
-var rangX34 = 22;
-var rangX35 = 32.25;
-
-var rangX36 = 68.25;
-var rangX37 = 78.5;
-var rangX38 = 88.75;
-
-//Ci dessous, importer un mesh en .obj et lui appliquer les coloration basiques du .mtl. Placer tout ce qui est entre ce message et le message de la prochaine importation pour désactiver.
-
-
-var PNGFile = 'img/noise.png';
-
-var OBJAmphi = 'models/slicedModels.obj';
-var MTLAmphi = 'models/slicedModels.mtl';
-var OBJIndBl = 'models/IndiceBleu.obj';
-var MTLIndBl = 'models/IndiceBleu.mtl';
-var OBJIndJa = 'models/IndiceJaune.obj';
-var MTLIndJa = 'models/IndiceJaune.mtl';
-var OBJIndRo = 'models/IndiceRouge.obj';
-var MTLIndRo = 'models/IndiceRouge.mtl';
-var OBJIndVe = 'models/IndiceVert.obj';
-var MTLIndVe = 'models/IndiceVert.mtl';
-var OBJIndVi = 'models/IndiceViolet.obj';
-var MTLIndVi = 'models/IndiceViolet.mtl';
 
 
 //Importing OBL and MTL to build models
 
-var objectsToRotate = [];
-var mtlLoader = new THREE.MTLLoader();
+mtlLoader = new THREE.MTLLoader();
 
 function importThings(objFile, mtlFile, posiX, posiY, posiZ){
 
@@ -138,7 +72,7 @@ function importThings(objFile, mtlFile, posiX, posiY, posiZ){
         materials.preload();
         materials.receiveShadow = true;
 
-        var objLoader = new THREE.OBJLoader();
+        objLoader = new THREE.OBJLoader();
         objLoader.setMaterials( materials );
         objLoader.load( objFile, function ( name ) {
 
@@ -155,6 +89,7 @@ function importThings(objFile, mtlFile, posiX, posiY, posiZ){
             objectsToRotate.push(name);
 
             scene.add( name );
+
         } );
 
     } );
@@ -169,7 +104,7 @@ function importImmobileThings(objFile, mtlFile, posiX, posiY, posiZ){
         materials.preload();
         materials.receiveShadow = true;
 
-        var objLoader = new THREE.OBJLoader();
+        objLoader = new THREE.OBJLoader();
         objLoader.setMaterials( materials );
         objLoader.load( objFile, function ( object ) {
 
@@ -177,10 +112,11 @@ function importImmobileThings(objFile, mtlFile, posiX, posiY, posiZ){
 
             object.scale.x = object.scale.y = object.scale.z = 0.02;
 
-            var texture = new THREE.TextureLoader().load(PNGFile);
+            texture = new THREE.TextureLoader().load(PNGFile);
             object.traverse(function (child) {   // aka setTexture
                 if (child instanceof THREE.Mesh) {
                     child.material.map = texture;
+
                 }
 
             });
@@ -192,53 +128,29 @@ function importImmobileThings(objFile, mtlFile, posiX, posiY, posiZ){
             mesh.position.z = posiZ;
             mesh.rotateX( Math.PI / 3 );
             mesh.receiveShadow = true;
+
         } );
 
     } );
+
 }
 
 
 
-//Updating size on rotate (For mobile) and on resize.
-window.addEventListener('resize', function(){
-    var width = window.innerWidth;
-    var weight = window.innerHeight;
-    renderer.setSize( width, weight );
-    camera.aspect = width / weight;
-    camera.updateProjectionMatrix();
-});
+function fogDensityControl() {
 
-camera.position.z = 30;
-camera.rotation.set( 0, 0, 0 );
+    cameraZoomValue = camera.position.z;
+    fogDensity = cameraZoomValue * 0.0003;
+    scene.fog = new THREE.FogExp2( 0xcccccc, fogDensity );
+    console.log(fogDensity);
 
-//Spawning lights
-scene.add( ambientLight );
-scene.add( keyLight );
-scene.add( fillLight );
-scene.add( backLight );
-
-
-//Spawning models
-importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
-
-//Blue team tips creation
-importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
-importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
-importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
-importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7);
-importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9);
-importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9);
-importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11);
-importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11);
-importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
+}
 
 
 
-//Animating things in the scene.
-var animate = function () {
-    requestAnimationFrame( animate );
+//Teleporting the camera when reaching set boundaries.
+function cameraEdgeTeleportControl() {
 
-    //Teleporting the camera when reaching set boundaries.
     if(controls.target.x > 90){
         controls.target.x = -395;
         camera.position.x = -395;
@@ -260,14 +172,189 @@ var animate = function () {
         camera.position.y = 90;
     }
 
+}
 
-    //Making tips rotating on themselves at set speed.
-    for (var i = 0; i < objectsToRotate.length; i++) {
+
+
+
+//Making tips rotating on themselves at set degree per second.
+function tipsRotationControl() {
+
+    for (let i = 0; i < objectsToRotate.length; i++) {
+
         objectsToRotate[i].rotation.x = clock.getElapsedTime() * 2;
         objectsToRotate[i].rotation.y = clock.getElapsedTime() * 4;
         objectsToRotate[i].rotation.z = clock.getElapsedTime() * 8;
+
     }
 
+}
+
+
+
+
+
+
+//Building variable for easy tips placing.
+rangY1 = -132;
+rangY2 = -111.08;
+rangY3 = -90.16;
+rangY4 = -69.25;
+rangY5 = -48.33;
+rangY6 = -27.41;
+rangY7 = -6.5;
+rangY8 = 14.41;
+rangY9 = 35.33;
+rangY10 = 56.25;
+rangY11 = 77.16;
+rangY12 = 77.16;
+
+
+rangZ1 = 1.3;
+rangZ2 = -0.4;
+rangZ3 = -1.7;
+rangZ4 = -3.0;
+rangZ5 = -4.3;
+rangZ6 = -5.6;
+rangZ7 = -6.8;
+rangZ8 = -8.1;
+rangZ9 = -9.4;
+rangZ10 = -10.7;
+rangZ11 = -12.0;
+rangZ12 = -12.0;
+
+
+rangX1 = -394.75;
+rangX2 = -384.5;
+rangX3 = -374.25;
+
+rangX4 = -338.5;
+rangX5 = -328.25;
+rangX6 = -318;
+rangX7 = -307.75;
+rangX8 = -297.5;
+rangX9 = -287.25;
+rangX10 = -277;
+rangX11 = -266.75;
+rangX12 = -256.5;
+rangX13 = -246.25;
+rangX14 = -236;
+rangX15 = -225.75;
+rangX16 = -215.5;
+rangX17 = -205.25;
+rangX18 = -195;
+rangX19 = -184.75;
+
+rangX20 = -121.5;
+rangX21 = -111.25;
+rangX22 = -101;
+rangX23 = -90.75;
+rangX24 = -80.5;
+rangX25 = -70.25;
+rangX26 = -60;
+rangX27 = -49.75;
+rangX28 = -39.5;
+rangX29 = -29.25;
+rangX30 = -19;
+rangX31 = -8.75;
+rangX32 = 1.5;
+rangX33 = 11.75;
+rangX34 = 22;
+rangX35 = 32.25;
+
+rangX36 = 68.25;
+rangX37 = 78.5;
+rangX38 = 88.75;
+
+//Ci dessous, importer un mesh en .obj et lui appliquer les coloration basiques du .mtl. Placer tout ce qui est entre ce message et le message de la prochaine importation pour désactiver.
+
+
+PNGFile = 'img/noise.png';
+
+OBJAmphi = 'models/slicedModels.obj';
+MTLAmphi = 'models/slicedModels.mtl';
+OBJIndBl = 'models/IndiceBleu.obj';
+MTLIndBl = 'models/IndiceBleu.mtl';
+OBJIndJa = 'models/IndiceJaune.obj';
+MTLIndJa = 'models/IndiceJaune.mtl';
+OBJIndRo = 'models/IndiceRouge.obj';
+MTLIndRo = 'models/IndiceRouge.mtl';
+OBJIndVe = 'models/IndiceVert.obj';
+MTLIndVe = 'models/IndiceVert.mtl';
+OBJIndVi = 'models/IndiceViolet.obj';
+MTLIndVi = 'models/IndiceViolet.mtl';
+
+
+
+
+
+
+
+
+
+init = function(){
+
+
+
+//Updating size on rotate (For mobile) and on resize.
+    window.addEventListener('resize', function(){
+        width = window.innerWidth;
+        weight = window.innerHeight;
+        renderer.setSize( width, weight );
+        camera.aspect = width / weight;
+        camera.updateProjectionMatrix();
+    });
+
+
+//Spawning lights
+    scene.add( ambientLight );
+
+    scene.add( keyLight );
+    keyLight.position.set(-100, 0, 100);
+
+    scene.add( fillLight );
+    fillLight.position.set(100, 0, 100);
+
+    scene.add( backLight );
+    backLight.position.set(100, 0, -100).normalize();
+
+
+//Spawning models
+    importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
+
+//Blue team tips creation
+    importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
+    importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
+    importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
+    importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7);
+    importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9);
+    importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9);
+    importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11);
+    importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11);
+    importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
+
+
+
+};
+
+
+
+
+
+
+
+
+//Animating things in the scene.
+animate = function () {
+
+    requestAnimationFrame( animate );
+
+
+    cameraEdgeTeleportControl();
+
+    tipsRotationControl();
+
+    fogDensityControl();
 
     controls.update();
     renderer.render(scene, camera);
@@ -275,7 +362,7 @@ var animate = function () {
 };
 
 
-
+init();
 animate();
 controls.update();
 
