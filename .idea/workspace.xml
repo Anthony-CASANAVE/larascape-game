@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="02b20393-2193-414a-ad78-1e6a5747a4c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/OrbitControls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/bleu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bleu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/amphi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/amphi.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/bleu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+            <state relative-caret-position="210">
+              <caret line="179" column="15" selection-start-line="179" selection-start-column="15" selection-end-line="185" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -56,6 +54,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>btn</find>
+      <find>materi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,6 +186,11 @@
             <path>
               <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
               <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="larascape-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="larascape-game" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -276,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31517000" />
+    <option name="totallyTimeSpent" value="51713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,9 +300,9 @@
       <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.21137586" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.29821718" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49961567" visible="true" weight="0.29821718" />
       <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50038433" side_tool="true" visible="true" weight="0.29821718" />
       <window_info anchor="bottom" id="Run" order="4" weight="0.32901135" />
       <window_info anchor="bottom" id="Database Changes" order="5" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
@@ -501,8 +505,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/bleu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="199" column="20" selection-start-line="199" selection-start-column="20" selection-end-line="199" selection-end-column="20" />
+        <state relative-caret-position="210">
+          <caret line="179" column="15" selection-start-line="179" selection-start-column="15" selection-end-line="185" selection-end-column="15" />
         </state>
       </provider>
     </entry>

@@ -21,7 +21,7 @@ controls.maxPolarAngle = Math.PI / 2;
 
 
 
-// scene.fog = new THREE.FogExp2( 0xcccccc, 0.018 );
+// scene.fog = new THREE.FogExp2( 0xcccccc, 0.0195 );
 
 
 renderer.physicallyCorrectLights = true;
@@ -110,6 +110,8 @@ var rangX38 = 88.75;
 //Ci dessous, importer un mesh en .obj et lui appliquer les coloration basiques du .mtl. Placer tout ce qui est entre ce message et le message de la prochaine importation pour désactiver.
 
 
+var PNGFile = 'img/noise.png';
+
 var OBJAmphi = 'models/slicedModels.obj';
 var MTLAmphi = 'models/slicedModels.mtl';
 var OBJIndBl = 'models/IndiceBleu.obj';
@@ -174,6 +176,15 @@ function importImmobileThings(objFile, mtlFile, posiX, posiY, posiZ){
             mesh = object;
 
             object.scale.x = object.scale.y = object.scale.z = 0.02;
+
+            var texture = new THREE.TextureLoader().load(PNGFile);
+            object.traverse(function (child) {   // aka setTexture
+                if (child instanceof THREE.Mesh) {
+                    child.material.map = texture;
+                }
+
+            });
+
             scene.add( mesh );
 
             mesh.position.x = posiX;
@@ -210,8 +221,7 @@ scene.add( backLight );
 //Spawning models
 importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
 
-//Indices équipe bleu
-importThings(OBJIndBl, MTLIndBl, rangX8, rangY1, rangZ1);
+//Blue team tips creation
 importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
 importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
 importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
