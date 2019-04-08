@@ -65,75 +65,59 @@ const ambientLight = new THREE.HemisphereLight( 0xddeeff, 0x202020, 2);
 
 mtlLoader = new THREE.MTLLoader();
 
-function importThings(objFile, mtlFile, posiX, posiY, posiZ){
+function objBuilder(objFile, mtlFile, posiX, posiY, posiZ, animated = true, textured = false) {
 
-    mtlLoader.load( mtlFile, function( materials ) {
+    mtlLoader.load( mtlFile, function( material ) {
 
-        materials.preload();
-        materials.receiveShadow = true;
-
-        objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials( materials );
-        objLoader.load( objFile, function ( name ) {
-
-            name.scale.x = name.scale.y = name.scale.z = 0.02;
-
-            name.position.x = posiX;
-            name.position.y = posiY;
-            name.position.z = posiZ;
-            name.rotateX( Math.PI / 3 );
-            name.matrixAutoUpdate  = true;
-            name.receiveShadow = true;
-            name.castShadow = true;
-
-            objectsToRotate.push(name);
-
-            scene.add( name );
-
-        } );
-
-    } );
-
-}
-
-
-function importImmobileThings(objFile, mtlFile, posiX, posiY, posiZ){
-
-    mtlLoader.load( mtlFile, function( materials ) {
-
-        materials.preload();
-        materials.receiveShadow = true;
+        material.preload();
+        material.receiveShadow = true;
 
         objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials( materials );
+        objLoader.setMaterials( material );
         objLoader.load( objFile, function ( object ) {
-
-            mesh = object;
 
             object.scale.x = object.scale.y = object.scale.z = 0.02;
 
-            texture = new THREE.TextureLoader().load(PNGFile);
-            object.traverse(function (child) {   // aka setTexture
-                if (child instanceof THREE.Mesh) {
-                    child.material.map = texture;
+            object.position.x = posiX;
+            object.position.y = posiY;
+            object.position.z = posiZ;
+            object.rotateX( Math.PI / 3 );
 
-                }
+            object.receiveShadow = true;
+            object.castShadow = true;
 
-            });
+            if (animated != false){
 
-            scene.add( mesh );
+                object.matrixAutoUpdate  = true;
+                objectsToRotate.push(object);
 
-            mesh.position.x = posiX;
-            mesh.position.y = posiY;
-            mesh.position.z = posiZ;
-            mesh.rotateX( Math.PI / 3 );
-            mesh.receiveShadow = true;
+            }
+
+            if (textured != false){
+
+                texture = new THREE.TextureLoader().load(textured);
+                object.traverse(function (child) {   // aka setTexture
+
+                    if (child instanceof THREE.Mesh) {
+                        child.material.map = texture;
+
+                    }
+
+                });
+
+            }
+
+            scene.add( object );
 
         } );
 
     } );
 
 }
+
+
+
+
 
 
 
@@ -142,7 +126,6 @@ function fogDensityControl() {
     cameraZoomValue = camera.position.z;
     fogDensity = cameraZoomValue * 0.0003;
     scene.fog = new THREE.FogExp2( 0xcccccc, fogDensity );
-    console.log(fogDensity);
 
 }
 
@@ -197,11 +180,13 @@ function listenToWindowsSize() {
 
     //Updating size on rotate (For mobile) and on resize.
     window.addEventListener('resize', function(){
+
         width = window.innerWidth;
         weight = window.innerHeight;
         renderer.setSize( width, weight );
         camera.aspect = width / weight;
         camera.updateProjectionMatrix();
+
     });
 
 }
@@ -223,19 +208,20 @@ function tipsRotationControl() {
 
 function buildItems(){
 
-    //Spawning models
-    importImmobileThings(OBJAmphi, MTLAmphi, 0, 0, 30);
+// !! Arguments are : (".obj file", ".MTL file", "X", Y", "Z", "Animated" (Optional, default = true), "texture" (Optional, defaule = false, or put texture link)
+//Spawning models
+    objBuilder(OBJAmphi, MTLAmphi, 0, 0, 30, false, PNGFile);
 
 //Blue team tips creation
-    importThings(OBJIndBl, MTLIndBl, rangX32, rangY1, rangZ1);
-    importThings(OBJIndVe, MTLIndVe, rangX10, rangY4, rangZ4);
-    importThings(OBJIndJa, MTLIndJa, rangX25, rangY4, rangZ4);
-    importThings(OBJIndBl, MTLIndBl, rangX29, rangY7, rangZ7);
-    importThings(OBJIndBl, MTLIndBl, rangX14, rangY9, rangZ9);
-    importThings(OBJIndBl, MTLIndBl, rangX37, rangY9, rangZ9);
-    importThings(OBJIndBl, MTLIndBl, rangX1, rangY11, rangZ11);
-    importThings(OBJIndBl, MTLIndBl, rangX9, rangY11, rangZ11);
-    importThings(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
+    objBuilder(OBJIndBl, MTLIndBl, rangX32, rangY1,  rangZ1);
+    objBuilder(OBJIndVe, MTLIndVe, rangX10, rangY4,  rangZ4);
+    objBuilder(OBJIndJa, MTLIndJa, rangX25, rangY4,  rangZ4);
+    objBuilder(OBJIndBl, MTLIndBl, rangX29, rangY7,  rangZ7);
+    objBuilder(OBJIndBl, MTLIndBl, rangX14, rangY9,  rangZ9);
+    objBuilder(OBJIndBl, MTLIndBl, rangX37, rangY9,  rangZ9);
+    objBuilder(OBJIndBl, MTLIndBl, rangX1,  rangY11, rangZ11);
+    objBuilder(OBJIndBl, MTLIndBl, rangX9,  rangY11, rangZ11);
+    objBuilder(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
 
 }
 
@@ -313,9 +299,9 @@ rangX36 = 68.25;
 rangX37 = 78.5;
 rangX38 = 88.75;
 
-//Ci dessous, importer un mesh en .C'est plus en mode "Je doit plaobj et lui appliquer les coloration basiques du .mtl. Placer tout ce qui est entre ce message et le message de la prochaine importation pour désactiver.
 
 
+//Loading .obj and .mtl in variables for further use.
 PNGFile = 'img/noise.png';
 
 OBJAmphi = 'models/slicedModels.obj';
