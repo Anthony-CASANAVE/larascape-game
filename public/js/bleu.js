@@ -8,8 +8,7 @@ var scene, camera, clock, renderer, fillLight, keyLight, backLight, mtlLoader, o
     rangZ1, rangZ2, rangZ3, rangZ4, rangZ5, rangZ6, rangZ7, rangZ8, rangZ9, rangZ10, rangZ11, rangZ12,
 
 //Declaring model and texture variables
-    PNGFile, OBJAmphi, MTLAmphi, OBJIndBl, MTLIndBl, OBJIndJa, MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi;
-
+    PNGFile, OBJAmphi, MTLAmphi, OBJConcrete, MTLConcrete, OBJPlastic, MTLPlastic, OBJredChaires, MTLredChaires, OBJredGround, MTLredGround, OBJIndBl, MTLIndBl, OBJIndJa, MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi;
 
 
 
@@ -207,17 +206,20 @@ function tipsRotationControl() {
 }
 
 function buildItems(){
-
 // !! Arguments are : (".obj file", ".MTL file", "X", Y", "Z", "Animated" (Optional, default = true), "texture" (Optional, default = false, or put texture link)
 //Spawning models
-    objBuilder(OBJAmphi, MTLAmphi, 0, 0, 30, false, PNGFile);
+    objBuilder(OBJAmphi,      MTLAmphi,      0, 0, 30, false, PNGFile);
+//     objBuilder(OBJConcrete,   MTLConcrete,   0, 0, 30, false, PNGFile);
+//     objBuilder(OBJPlastic,    MTLPlastic,    0, 0, 30, false, PNGFile);
+//     objBuilder(OBJredChaires, MTLredChaires, 0, 0, 30, false, PNGFile);
+//     objBuilder(OBJredGround,  MTLredGround,  0, 0, 30, false, PNGFile);
 
 //Blue team tips creation
     objBuilder(OBJIndBl, MTLIndBl, rangX32, rangY1,  rangZ1);
     objBuilder(OBJIndVe, MTLIndVe, rangX10, rangY4,  rangZ4);
     objBuilder(OBJIndJa, MTLIndJa, rangX25, rangY4,  rangZ4);
-    objBuilder(OBJIndBl, MTLIndBl, rangX29, rangY7,  rangZ7);
-    objBuilder(OBJIndBl, MTLIndBl, rangX14, rangY9,  rangZ9);
+    objBuilder(OBJIndVi, MTLIndVi, rangX29, rangY7,  rangZ7);
+    objBuilder(OBJIndRo, MTLIndRo, rangX14, rangY9,  rangZ9);
     objBuilder(OBJIndBl, MTLIndBl, rangX37, rangY9,  rangZ9);
     objBuilder(OBJIndBl, MTLIndBl, rangX1,  rangY11, rangZ11);
     objBuilder(OBJIndBl, MTLIndBl, rangX9,  rangY11, rangZ11);
@@ -236,22 +238,22 @@ rangY4 = -69.25;
 rangY5 = -48.33;
 rangY6 = -27.41;
 rangY7 = -6.5;
-rangY8 = 14.41;
-rangY9 = 35.33;
+rangY8 =  14.41;
+rangY9 =  35.33;
 rangY10 = 56.25;
 rangY11 = 77.16;
 rangY12 = 77.16;
 
 
-rangZ1 = 1.3;
-rangZ2 = -0.4;
-rangZ3 = -1.7;
-rangZ4 = -3.0;
-rangZ5 = -4.3;
-rangZ6 = -5.6;
-rangZ7 = -6.8;
-rangZ8 = -8.1;
-rangZ9 = -9.4;
+rangZ1 =   1.3;
+rangZ2 =  -0.4;
+rangZ3 =  -1.7;
+rangZ4 =  -3.0;
+rangZ5 =  -4.3;
+rangZ6 =  -5.6;
+rangZ7 =  -6.8;
+rangZ8 =  -8.1;
+rangZ9 =  -9.4;
 rangZ10 = -10.7;
 rangZ11 = -12.0;
 rangZ12 = -12.0;
@@ -261,12 +263,12 @@ rangX1 = -394.75;
 rangX2 = -384.5;
 rangX3 = -374.25;
 
-rangX4 = -338.5;
-rangX5 = -328.25;
-rangX6 = -318;
-rangX7 = -307.75;
-rangX8 = -297.5;
-rangX9 = -287.25;
+rangX4 =  -338.5;
+rangX5 =  -328.25;
+rangX6 =  -318;
+rangX7 =  -307.75;
+rangX8 =  -297.5;
+rangX9 =  -287.25;
 rangX10 = -277;
 rangX11 = -266.75;
 rangX12 = -256.5;
@@ -290,10 +292,10 @@ rangX28 = -39.5;
 rangX29 = -29.25;
 rangX30 = -19;
 rangX31 = -8.75;
-rangX32 = 1.5;
-rangX33 = 11.75;
-rangX34 = 22;
-rangX35 = 32.25;
+rangX32 =  1.5;
+rangX33 =  11.75;
+rangX34 =  22;
+rangX35 =  32.25;
 
 rangX36 = 68.25;
 rangX37 = 78.5;
@@ -304,16 +306,16 @@ rangX38 = 88.75;
 //Loading .obj and .mtl in variables for further use.
 PNGFile = 'img/noise.png';
 
-OBJAmphi = 'models/slicedModels.obj';
-MTLAmphi = 'models/slicedModels.mtl';
-OBJConcrete = 'models/concreteParts.obj'
-MTLConcrete = 'models/concreteParts.mtl'
-OBJPlastic = 'models/plasticTables.obj'
-MTLConcrete = 'models/plasticTables.mtl'
+OBJAmphi =      'models/slicedModels.obj';
+MTLAmphi =      'models/slicedModels.mtl';
+OBJConcrete =   'models/concreteParts.obj'
+MTLConcrete =   'models/concreteParts.mtl'
+OBJPlastic =    'models/plasticTables.obj'
+MTLPlastic =    'models/plasticTables.mtl'
 OBJredChaires = 'models/redChaires.obj'
 MTLredChaires = 'models/redChaires.mtl'
-OBJredGround = 'models/redGround.obj'
-MTLredGround = 'models/redGround.mtl'
+OBJredGround =  'models/redGround.obj'
+MTLredGround =  'models/redGround.mtl'
 
 
 OBJIndBl = 'models/IndiceBleu.obj';
