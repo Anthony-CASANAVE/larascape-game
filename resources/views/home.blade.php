@@ -27,11 +27,7 @@
     </nav>
     {{--CONTENU--}}
     <div id="j21">
-        @for ($i=0; $i<=22; $i++)
-        <tr>
-            <td>{{ $i }}</td>
-        </tr>
-        @endfor
+
     </div>
     <div id="j22">
 
