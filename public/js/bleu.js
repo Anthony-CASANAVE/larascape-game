@@ -208,7 +208,7 @@ function tipsRotationControl() {
 
 function buildItems(){
 
-// !! Arguments are : (".obj file", ".MTL file", "X", Y", "Z", "Animated" (Optional, default = true), "texture" (Optional, defaule = false, or put texture link)
+// !! Arguments are : (".obj file", ".MTL file", "X", Y", "Z", "Animated" (Optional, default = true), "texture" (Optional, default = false, or put texture link)
 //Spawning models
     objBuilder(OBJAmphi, MTLAmphi, 0, 0, 30, false, PNGFile);
 
@@ -306,6 +306,16 @@ PNGFile = 'img/noise.png';
 
 OBJAmphi = 'models/slicedModels.obj';
 MTLAmphi = 'models/slicedModels.mtl';
+OBJConcrete = 'models/concreteParts.obj'
+MTLConcrete = 'models/concreteParts.mtl'
+OBJPlastic = 'models/plasticTables.obj'
+MTLConcrete = 'models/plasticTables.mtl'
+OBJredChaires = 'models/redChaires.obj'
+MTLredChaires = 'models/redChaires.mtl'
+OBJredGround = 'models/redGround.obj'
+MTLredGround = 'models/redGround.mtl'
+
+
 OBJIndBl = 'models/IndiceBleu.obj';
 MTLIndBl = 'models/IndiceBleu.mtl';
 OBJIndJa = 'models/IndiceJaune.obj';
@@ -354,4 +364,8 @@ animate = function () {
 
 init();
 animate();
+
+
+
+
 

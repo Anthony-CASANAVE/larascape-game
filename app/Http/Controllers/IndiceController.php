@@ -22,6 +22,14 @@ class IndiceController extends Controller
         }
     }
 
+*/
+    public function indices()
+    {
+        $indices = indices::all();
+        return view('/', compact('indices'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
