@@ -32,26 +32,28 @@
                 <img class="img-fluid" src="{{asset('img/mapEtCoordonnees.png')}}" alt="">
             </div>
             <div class="col">
-                <form>
+                <form method="POST" action="{{ route('indices.store') }}">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="selectrang">Selectionnez une rangée</label>
-                        <input type="text" class="form-control" id="selectrang" placeholder="Ex : 9">
+                        <input type="text" class="form-control" id="selectrang" placeholder="Ex : 9" name="rang_x">
                     </div>
                     <div class="form-group">
                         <label for="selectcol">Selectionnez une colonne</label>
-                        <input type="text" class="form-control" id="selectcol" placeholder="Ex : 12">
+                        <input type="text" class="form-control" id="selectcol" placeholder="Ex : 12" name="col_yz">
                     </div>
                     <div class="form-group">
                         <label for="#">Selectionnez la couleur d'équipe</label>
-                        <select class="form-control">
+                        <select class="form-control" name="obj_text">
                             <option selected>Choisissez ...</option>
-                            <option>Rouge</option>
-                            <option>Bleu</option>
-                            <option>Jaune</option>
-                            <option>Vert</option>
-                            <option>Violet</option>
+                            <option value="Ro">Rouge</option>
+                            <option value="Bl">Bleu</option>
+                            <option value="Ja">Jaune</option>
+                            <option value="Ve">Vert</option>
+                            <option value="Vi">Violet</option>
                     </select>
                     </div>
+
                     <button type="submit" class="btn btn-primary">Ajouter l'indice</button>
                 </form>
             </div>
@@ -64,6 +66,7 @@
             </div>
             <div class="col">
                 <form method="POST" action="{{ route('indices.store') }}">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="selectrang2">Selectionnez une rangée</label>
                         <input type="text" class="form-control" id="selectrang2" placeholder="Ex : 9">

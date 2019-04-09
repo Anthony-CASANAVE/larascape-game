@@ -27,7 +27,7 @@ class IndiceController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -38,7 +38,26 @@ class IndiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $indice = new Indices([
+            'rang_x' => $request->get('rang_x'),
+            'col_yz'=> $request->get('col_yz'),
+            'obj_text'=> $request->get('obj_text'),
+
+            $rang_x=$request->get('rang_x'),
+            $col_yz=$request->get('col_yz'),
+
+            'xyz'=>($rang_x.'-'.$col_yz)
+
+        ]);
+        $indice->save();
+        function sucess(){
+            echo "Camarche";
+        }
+        return sucess();
+
+        function exists(){
+            echo"Caexisteeja";
+        }
     }
 
     /**
