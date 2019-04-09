@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Indices;
 use Illuminate\Http\Request;
 
-class mIndiceController extends Controller
+class IndiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,10 @@ class mIndiceController extends Controller
      */
     public function index()
     {
-        //
+        $indices = Indices::all();
+        foreach ($indices as $indice) {
+            echo  $indice->xyz . '<br>';
+        }
     }
 
     /**
