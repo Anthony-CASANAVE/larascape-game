@@ -206,7 +206,6 @@ function tipsRotationControl() {
 }
 
 function buildItems(){
-
 // !! Arguments are : (".obj file", ".MTL file", "X", Y", "Z", "Animated" (Optional, default = true), "texture" (Optional, default = false, or put texture link)
 //Spawning models
     objBuilder(OBJAmphi,      MTLAmphi,      0, 0, 30, false, PNGFile);
@@ -307,16 +306,16 @@ rangX38 = 88.75;
 //Loading .obj and .mtl in variables for further use.
 PNGFile = 'img/noise.png';
 
-OBJAmphi = 'models/slicedModels.obj';
-MTLAmphi = 'models/slicedModels.mtl';
-OBJConcrete = 'models/concreteParts.obj'
-MTLConcrete = 'models/concreteParts.mtl'
-OBJPlastic = 'models/plasticTables.obj'
-MTLConcrete = 'models/plasticTables.mtl'
+OBJAmphi =      'models/slicedModels.obj';
+MTLAmphi =      'models/slicedModels.mtl';
+OBJConcrete =   'models/concreteParts.obj'
+MTLConcrete =   'models/concreteParts.mtl'
+OBJPlastic =    'models/plasticTables.obj'
+MTLPlastic =    'models/plasticTables.mtl'
 OBJredChaires = 'models/redChaires.obj'
 MTLredChaires = 'models/redChaires.mtl'
-OBJredGround = 'models/redGround.obj'
-MTLredGround = 'models/redGround.mtl'
+OBJredGround =  'models/redGround.obj'
+MTLredGround =  'models/redGround.mtl'
 
 
 OBJIndBl = 'models/IndiceBleu.obj';
