@@ -60,22 +60,22 @@
         </div>
         <div class="raw">
 
-                <table class="table table-dark">
+                <table class="table table-dark table-striped table-responsive-sm table-bordered">
                     <thead>
                     <tr>
-                        <th scope="col">Couleur</th>
-                        <th scope="col">Rangée</th>
-                        <th scope="col">Colonne</th>
-                        <th scope="col">Supprimer l'indice</th>
+                        <th class="text-center" scope="col">Couleur</th>
+                        <th class="text-center" scope="col">Rangée</th>
+                        <th class="text-center" scope="col">Colonne</th>
+                        <th class="text-center" scope="col">Supprimer l'indice</th>
                     </tr>
                     <tbody>
                     <?php $indices = App\Indices::all();?>
                     </thead>
                     @foreach($indices as $indice)
                         <tr>
-                        <td>{{ $indice->obj_text }}</td>
-                        <td>{{ $indice->rang_x }}</td>
-                        <td>{{ $indice->col_yz }}</td>
+                        <td class="text-center">{{ $indice->obj_text }}</td>
+                        <td class="text-center">{{ $indice->rang_x }}</td>
+                        <td class="text-center">{{ $indice->col_yz }}</td>
                             <td><button class="btn btn-danger btn-sm">X</button></td>
                         </tr>
                     @endforeach
