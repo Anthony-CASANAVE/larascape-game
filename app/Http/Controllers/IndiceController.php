@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Indices;
+use function foo\func;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class IndiceController extends Controller
 {
@@ -38,6 +40,7 @@ class IndiceController extends Controller
      */
     public function store(Request $request)
     {
+
         $indice = new Indices([
             'rang_x' => $request->get('rang_x'),
             'col_yz'=> $request->get('col_yz'),
@@ -46,17 +49,23 @@ class IndiceController extends Controller
             $rang_x=$request->get('rang_x'),
             $col_yz=$request->get('col_yz'),
 
-            'xyz'=>($rang_x.'-'.$col_yz)
-
+            'xyz'=>($rang_x.'-'.$col_yz),
+            $xyz= Indices::where('xyz', '=', "$rang_x.'-'.$col_yz")
         ]);
-        $indice->save();
-        function sucess(){
-            echo "Camarche";
-        }
-        return sucess();
 
-        function exists(){
-            echo"Caexisteeja";
+        if ((Indices::where('rang_x',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {
+
+            echo "<script>alert(\"L'indice éxiste déjà !\")</script>";
+
+        }
+        else {
+            $indice->save();
+            function sucess()
+            {
+                echo "<script>alert(\"L'indice à été ajouté avec succès !\")</script>";
+            }
+
+            return sucess();
         }
     }
 
