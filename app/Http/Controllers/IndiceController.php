@@ -24,11 +24,13 @@ class IndiceController extends Controller
         }
     }
 
-*/
+
+    //Return indice table in json format for the scene builder js.
     public function indices()
     {
-        $indices = indices::all();
-        return view('/', compact('indices'));
+        $indices=Indices::all();
+        return view('amphi')->with('indices',$indices);
+
     }
 
 
