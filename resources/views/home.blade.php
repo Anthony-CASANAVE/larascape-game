@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
+
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
 
@@ -19,7 +21,12 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __("Créer un compte admin") }}</a>
+{{--                    Création d'un compte administrateur supplémentaire--}}
+                    @if (Route::has('home'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __("Créer un compte admin supplémentaire") }}</a>
+                        </li>
+                        @endif</a>
                     </li>
                 </ul>
             </div>
@@ -29,9 +36,9 @@
     <div id="j21">
         <div class="row">
             <div class="col-9">
-                <img class="img-fluid" src="{{asset('img/mapEtCoordonnees.png')}}" alt="">
+{{--            AMPHI INTEGRATION--}}
             </div>
-            <div class="col">
+            <div style="border-left: #4e555b 1px solid; margin-bottom: 10px;" class="col">
                 <form method="POST" action="{{ route('indices.store') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -69,6 +76,7 @@
                         <th class="text-center" scope="col">Supprimer l'indice</th>
                     </tr>
                     <tbody>
+                    {{-- Affichage des indices dans un tableau--}}
                     <?php $indices = App\Indices::all();?>
                     </thead>
                     @foreach($indices as $indice)
@@ -83,6 +91,7 @@
                             </td>
                         </tr>
                     @endforeach
+
                     </tbody>
                 </table>
         </div>
@@ -90,9 +99,9 @@
     <div id="j22">
         <div class="row">
             <div class="col-9">
-                <img class="img-fluid" src="{{asset('img/dranac.jpg')}}" alt="">
+{{--                AMPHI INTEGRATION--}}
             </div>
-            <div class="col">
+            <div style="border-left: #4e555b 1px solid; margin-bottom: 10px;" class="col">
                 <form method="POST" action="{{ route('indices.store') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
