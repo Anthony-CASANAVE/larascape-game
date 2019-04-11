@@ -25,9 +25,6 @@
                     @else
                         <a class="grey" href="{{ route('login') }}">Accéder au panneau d'administration</a>
 
-                        {{--@if (Route::has('register'))
-                            <a class="grey" href="{{ route('register') }}">S'enregistrer</a>
-                        @endif--}}
                     @endauth
                 </div>
             @endif
@@ -40,11 +37,11 @@
                 </div>
 
                 <div class="links">
-                    <a class="blue" href="{{ url('/amphi') }}">BLEU</a>
-                    <a class="red" href="{{ url('/amphi') }}">ROUGE</a>
-                    <a class="green" href="{{ url('/amphi') }}">VERT</a>
-                    <a class="yellow" href="{{ url('/amphi') }}">JAUNE</a>
-                    <a class="violet" href="{{ url('/amphi') }}">VIOLET</a>
+                    <a class="blue" href="{{ url('/sceneBleu') }}">BLEU</a>
+                    <a class="red" href="{{ url('/sceneRouge') }}">ROUGE</a>
+                    <a class="green" href="{{ url('/sceneVert') }}">VERT</a>
+                    <a class="yellow" href="{{ url('/sceneJaune') }}">JAUNE</a>
+                    <a class="violet" href="{{ url('/sceneViolet') }}">VIOLET</a>
                 </div>
             </div>
 
