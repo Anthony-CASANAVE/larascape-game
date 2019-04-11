@@ -1,10 +1,17 @@
-var j021=new Array();
-for (var i=0; i<22; i++) {
-    <tr>
-        <td>
-}
 
-var j022=new Array();
-for (var j=0; j<100000; j++) {
-    j022[j]= ;
-}
+$(function(){
+    $('#edit21').click(function(){
+        $('#j21').toggle(); // AFFICHE ET CACHE A CHAQUE CLIQUE SUR LE BOUTTON
+        $('#j22').toggle(); // AFFICHE ET CACHE A CHAQUE CLIQUE SUR LE BOUTTON
+    });
+
+    $('#edit22').click(function(){
+        $('#j21').toggle(); // AFFICHE ET CACHE A CHAQUE CLIQUE SUR LE BOUTTON
+        $('#j22').toggle(); // AFFICHE ET CACHE A CHAQUE CLIQUE SUR LE BOUTTON
+    });
+
+    $('#j21').show();
+
+    $('#j22').hide();
+});
+

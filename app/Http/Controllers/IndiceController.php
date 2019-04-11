@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Indices;
+use function foo\func;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 
 class IndiceController extends Controller
 {
@@ -13,8 +17,22 @@ class IndiceController extends Controller
      */
     public function index()
     {
-        //
+        //Recuperation de tout les indices existant en BDD
+        $indices = Indices::all();
+        foreach ($indices as $indice) {
+            echo  $indice->xyz . '<br>';
+        }
     }
+
+
+    //Return indice table in json format for the scene builder js.
+    public function indices()
+    {
+        $indices=Indices::all();
+        return view('amphi')->with('indices',$indices);
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +41,7 @@ class IndiceController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -34,7 +52,31 @@ class IndiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Mise en cache des information de remplissage de la table
+        $indice = new Indices([
+            'rang_x' => $request->get('rang_x'),
+            'col_yz'=> $request->get('col_yz'),
+            'obj_text'=> $request->get('obj_text'),
+
+            $rang_x=$request->get('rang_x'),
+            $col_yz=$request->get('col_yz'),
+
+            'xyz'=>($rang_x.'-'.$col_yz)
+
+        ]);
+            // Verification de l'existance de l'indice
+        if ((Indices::where('rang_x',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {
+
+            return redirect()->route('home');
+
+        }
+        else {
+            // Ajout de l'indice en BDD
+            $indice->save();
+            echo "<script>alert(\"L'indice à été ajouté avec succès !\")</script>";
+
+            return redirect()->route('home');
+        }
     }
 
     /**
@@ -78,7 +120,13 @@ class IndiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+
     {
-        //
+//        Recherche de l'id de l'indice
+        $indice = Indices::find($id);
+        // Suppression de l'indice
+        $indice->delete();
+
+        return redirect()->back();
     }
 }
