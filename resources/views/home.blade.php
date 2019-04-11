@@ -58,7 +58,7 @@
                 </form>
             </div>
         </div>
-        <div class="raw">
+        <div class="row">
 
                 <table class="table table-dark table-striped table-responsive-sm table-bordered">
                     <thead>
@@ -76,7 +76,11 @@
                         <td class="text-center">{{ $indice->obj_text }}</td>
                         <td class="text-center">{{ $indice->rang_x }}</td>
                         <td class="text-center">{{ $indice->col_yz }}</td>
-                            <td><button class="btn btn-danger btn-sm">X</button></td>
+                            <td><form  method="POST" action="{{ route('indices.destroy', $indice->id) }}">
+                                    {{ csrf_field() }}{{ method_field('DELETE') }}
+                                    <button class="btn btn-sm btn-danger" type="submit">Supprimer</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -113,6 +117,35 @@
                     <button id= type="submit" class="btn btn-primary">Ajouter l'indice</button>
                 </form>
             </div>
+        </div>
+        <div class="row">
+
+            <table class="table table-dark table-striped table-responsive-sm table-bordered">
+                <thead>
+                <tr>
+                    <th class="text-center" scope="col">Couleur</th>
+                    <th class="text-center" scope="col">Rangée</th>
+                    <th class="text-center" scope="col">Colonne</th>
+                    <th class="text-center" scope="col">Supprimer l'indice</th>
+                </tr>
+                <tbody>
+                <?php $indices = App\Indices::all();?>
+                </thead>
+                @foreach($indices as $indice)
+                    <tr>
+                        <td class="text-center">{{ $indice->obj_text }}</td>
+                        <td class="text-center">{{ $indice->rang_x }}</td>
+                        <td class="text-center">{{ $indice->col_yz }}</td>
+                        <td><form  method="POST" action="{{ route('indices.destroy', $indice->id) }}">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button class="btn btn-sm btn-danger" type="submit">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+            </table>
         </div>
     </div>
 

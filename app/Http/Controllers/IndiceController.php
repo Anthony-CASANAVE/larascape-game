@@ -55,17 +55,14 @@ class IndiceController extends Controller
 
         if ((Indices::where('rang_x',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {
 
-            echo "<script>alert(\"L'indice éxiste déjà !\")</script>";
+            return redirect()->route('home');
 
         }
         else {
             $indice->save();
-            function sucess()
-            {
-                echo "<script>alert(\"L'indice à été ajouté avec succès !\")</script>";
-            }
+            echo "<script>alert(\"L'indice à été ajouté avec succès !\")</script>";
 
-            return sucess();
+            return redirect()->route('home');
         }
     }
 
@@ -110,7 +107,11 @@ class IndiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+
     {
-        //
+        $indice = Indices::find($id);
+        $indice->delete();
+
+        return redirect()->route('home');
     }
 }
