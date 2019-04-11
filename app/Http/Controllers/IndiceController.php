@@ -22,11 +22,13 @@ class IndiceController extends Controller
         }
     }
 
-*/
+
+    //Return indice table in json format for the scene builder js.
     public function indices()
     {
-        $indices = indices::all();
-        return view('/', compact('indices'));
+        $indices=Indices::all();
+        return view('amphi')->with('indices',$indices);
+
     }
 
 
@@ -57,8 +59,7 @@ class IndiceController extends Controller
             $rang_x=$request->get('rang_x'),
             $col_yz=$request->get('col_yz'),
 
-            'xyz'=>($rang_x.'-'.$col_yz),
-            $xyz= Indices::where('xyz', '=', "$rang_x.'-'.$col_yz")
+            'xyz'=>($rang_x.'-'.$col_yz)
         ]);
 
         if ((Indices::where('rang_x',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {

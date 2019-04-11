@@ -8,8 +8,8 @@ var scene, camera, clock, renderer, fillLight, keyLight, backLight, mtlLoader, o
     rangZ1, rangZ2, rangZ3, rangZ4, rangZ5, rangZ6, rangZ7, rangZ8, rangZ9, rangZ10, rangZ11, rangZ12,
 
 //Declaring model and texture variables
-    PNGFile, OBJAmphi, MTLAmphi, OBJConcrete, MTLConcrete, OBJPlastic, MTLPlastic, OBJredChaires, MTLredChaires, OBJredGround, MTLredGround, OBJIndBl, MTLIndBl, OBJIndJa, MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi;
-
+    PNGFile, OBJAmphi, MTLAmphi, OBJConcrete, MTLConcrete, OBJPlastic, MTLPlastic, OBJredChaires, MTLredChaires, OBJredGround, MTLredGround, OBJIndBl, MTLIndBl, OBJIndJa,
+    MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi, OBJIndFromArray, MTLIndFromArray, rang_xFromArray, col_yFromArray, col_zFromArray;
 
 
 
@@ -205,25 +205,36 @@ function tipsRotationControl() {
 
 }
 
+function BuildFromDB() {
+
+//PHPtoJs is a json coming from IndiceController.indice() and containing the indice table from the database, put in a JS variable in the view.
+    for (let i = 0; i < PHPtoJs.length; i++) {
+
+        OBJIndFromArray = "OBJInd" + PHPtoJs[i].obj_text;
+        MTLIndFromArray = "MTLInd" + PHPtoJs[i].obj_text;
+        rang_xFromArray = "rangX"  + PHPtoJs[i].rang_x;
+        col_yFromArray  = "rangY"  + PHPtoJs[i].col_yz;
+        col_zFromArray  = "rangZ"  + PHPtoJs[i].col_yz;
+
+        // console.log("objBuilder(" + OBJIndFromArray + "," + MTLIndFromArray + "," + rang_xFromArray + "," + col_yFromArray + "," +  col_zFromArray + ");");
+
+        objBuilder(eval(OBJIndFromArray), eval(MTLIndFromArray), eval(rang_xFromArray), eval(col_yFromArray),  eval(col_zFromArray));
+
+    }
+}
+
 function buildItems(){
 // !! Arguments are : (".obj file", ".MTL file", "X", Y", "Z", "Animated" (Optional, default = true), "texture" (Optional, default = false, or put texture link)
+
 //Spawning models
-    objBuilder(OBJAmphi,      MTLAmphi,      0, 0, 30, false, PNGFile);
+    objBuilder(OBJAmphi, MTLAmphi, 0,0,30, false, PNGFile);
 //     objBuilder(OBJConcrete,   MTLConcrete,   0, 0, 30, false, PNGFile);
 //     objBuilder(OBJPlastic,    MTLPlastic,    0, 0, 30, false, PNGFile);
 //     objBuilder(OBJredChaires, MTLredChaires, 0, 0, 30, false, PNGFile);
 //     objBuilder(OBJredGround,  MTLredGround,  0, 0, 30, false, PNGFile);
 
-//Blue team tips creation
-    objBuilder(OBJIndBl, MTLIndBl, rangX32, rangY1,  rangZ1);
-    objBuilder(OBJIndVe, MTLIndVe, rangX10, rangY4,  rangZ4);
-    objBuilder(OBJIndJa, MTLIndJa, rangX25, rangY4,  rangZ4);
-    objBuilder(OBJIndVi, MTLIndVi, rangX29, rangY7,  rangZ7);
-    objBuilder(OBJIndRo, MTLIndRo, rangX14, rangY9,  rangZ9);
-    objBuilder(OBJIndBl, MTLIndBl, rangX37, rangY9,  rangZ9);
-    objBuilder(OBJIndBl, MTLIndBl, rangX1,  rangY11, rangZ11);
-    objBuilder(OBJIndBl, MTLIndBl, rangX9,  rangY11, rangZ11);
-    objBuilder(OBJIndBl, MTLIndBl, rangX28, rangY11, rangZ11);
+//Tips creation
+    BuildFromDB();
 
 }
 
@@ -345,7 +356,7 @@ init = function(){
 
 };
 
-//update before each frame and then renders it.
+//Update before each frame and then renders it.
 animate = function () {
 
     requestAnimationFrame( animate );
@@ -356,18 +367,14 @@ animate = function () {
 
     tipsRotationControl();
 
-    fogDensityControl();
+    // fogDensityControl();
 
     controls.update();
     renderer.render(scene, camera);
 
 };
 
-
+//The show must go on !
 init();
+
 animate();
-
-
-
-
-
