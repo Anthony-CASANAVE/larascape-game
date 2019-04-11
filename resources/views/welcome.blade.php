@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="links">
-                    <a class="blue" href="{{ url('/sceneBleu') }}">BLEU</a>
+                    <a class="blue" href="{{ route('sceneBleu') }}">BLEU</a>
                     <a class="red" href="{{ url('/sceneRouge') }}">ROUGE</a>
                     <a class="green" href="{{ url('/sceneVert') }}">VERT</a>
                     <a class="yellow" href="{{ url('/sceneJaune') }}">JAUNE</a>
