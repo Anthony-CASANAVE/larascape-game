@@ -37,11 +37,33 @@
                 </div>
 
                 <div class="links">
-                    <a class="blue"   href="{{ route('scene') }}">BLEU</a>
-                    <a class="red"    href="{{ route('scene') }}">ROUGE</a>
-                    <a class="green"  href="{{ route('scene') }}">VERT</a>
-                    <a class="yellow" href="{{ route('scene') }}">JAUNE</a>
-                    <a class="violet" href="{{ route('scene') }}">VIOLET</a>
+
+                    <form action="{{ route('scene') }}" method="POST">
+                        {{csrf_field()}}
+                        <button class="blue"   ><input type="hidden" name="color" value="Bl"> Bleu   </button>
+                    </form>
+
+                    <form action="{{ route('scene') }}" method="POST">
+                        {{csrf_field()}}
+                        <button class="red"    ><input type="hidden" name="color" value="Ro"> Rouge  </button>
+                    </form>
+
+                    <form action="{{ route('scene') }}" method="POST">
+                        {{csrf_field()}}
+                        <button class="green"  ><input type="hidden" name="color" value="Ve"> Vert   </button>
+                    </form>
+
+                    <form action="{{ route('scene') }}" method="POST">
+                        {{csrf_field()}}
+                        <button class="yellow" ><input type="hidden" name="color" value="Ja"> Jaune  </button>
+                    </form>
+
+                    <form action="{{ route('scene') }}" method="POST">
+                        {{csrf_field()}}
+                        <button class="violet" ><input type="hidden" name="color" value="Vi"> Violet </button>
+                    </form>
+
+
                 </div>
             </div>
 

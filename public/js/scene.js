@@ -1,15 +1,20 @@
 //Declaring all variables except coordinates, models and textures.
-var scene, camera, clock, renderer, fillLight, keyLight, backLight, mtlLoader, objLoader, texture, fogDensity, cameraZoomValue, objectsToRotate = [], width, weight, init, animate,
+var scene, camera, clock, renderer, fillLight, keyLight, backLight, mtlLoader, objLoader, texture, fogDensity,
+    cameraZoomValue, objectsToRotate = [], width, weight, init, animate,
 
 //Declaring all coordonates X Y Z
-    rangX1, rangX2, rangX3, rangX4, rangX5, rangX6, rangX7, rangX8, rangX9, rangX10, rangX11, rangX12, rangX13, rangX14, rangX15, rangX16, rangX17, rangX18, rangX19,
-    rangX20, rangX21, rangX22, rangX23, rangX24, rangX25, rangX26, rangX27, rangX28, rangX29, rangX30, rangX31, rangX32, rangX33, rangX34, rangX35, rangX36, rangX37, rangX38,
+    rangX1, rangX2, rangX3, rangX4, rangX5, rangX6, rangX7, rangX8, rangX9, rangX10, rangX11, rangX12, rangX13, rangX14,
+    rangX15, rangX16, rangX17, rangX18, rangX19,
+    rangX20, rangX21, rangX22, rangX23, rangX24, rangX25, rangX26, rangX27, rangX28, rangX29, rangX30, rangX31, rangX32,
+    rangX33, rangX34, rangX35, rangX36, rangX37, rangX38,
     rangY1, rangY2, rangY3, rangY4, rangY5, rangY6, rangY7, rangY8, rangY9, rangY10, rangY11, rangY12,
     rangZ1, rangZ2, rangZ3, rangZ4, rangZ5, rangZ6, rangZ7, rangZ8, rangZ9, rangZ10, rangZ11, rangZ12,
 
 //Declaring model and texture variables
-    PNGFile, OBJAmphi, MTLAmphi, OBJConcrete, MTLConcrete, OBJPlastic, MTLPlastic, OBJredChaires, MTLredChaires, OBJredGround, MTLredGround, OBJIndBl, MTLIndBl, OBJIndJa,
-    MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi, OBJIndFromArray, MTLIndFromArray, rang_xFromArray, col_yFromArray, col_zFromArray;
+    PNGFile, OBJAmphi, MTLAmphi, OBJConcrete, MTLConcrete, OBJPlastic, MTLPlastic, OBJredChaires, MTLredChaires,
+    OBJredGround, MTLredGround, OBJIndBl, MTLIndBl, OBJIndJa,
+    MTLIndJa, OBJIndRo, MTLIndRo, OBJIndVe, MTLIndVe, OBJIndVi, MTLIndVi, OBJIndFromArray, MTLIndFromArray,
+    rang_xFromArray, col_yFromArray, col_zFromArray;
 
 
 
@@ -319,14 +324,14 @@ PNGFile = 'img/noise.png';
 
 OBJAmphi =      'models/slicedModels.obj';
 MTLAmphi =      'models/slicedModels.mtl';
-OBJConcrete =   'models/concreteParts.obj'
-MTLConcrete =   'models/concreteParts.mtl'
-OBJPlastic =    'models/plasticTables.obj'
-MTLPlastic =    'models/plasticTables.mtl'
-OBJredChaires = 'models/redChaires.obj'
-MTLredChaires = 'models/redChaires.mtl'
-OBJredGround =  'models/redGround.obj'
-MTLredGround =  'models/redGround.mtl'
+OBJConcrete =   'models/concreteParts.obj';
+MTLConcrete =   'models/concreteParts.mtl';
+OBJPlastic =    'models/plasticTables.obj';
+MTLPlastic =    'models/plasticTables.mtl';
+OBJredChaires = 'models/redChaires.obj';
+MTLredChaires = 'models/redChaires.mtl';
+OBJredGround =  'models/redGround.obj';
+MTLredGround =  'models/redGround.mtl';
 
 
 OBJIndBl = 'models/IndiceBleu.obj';
