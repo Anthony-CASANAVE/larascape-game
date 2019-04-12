@@ -25,10 +25,23 @@ class IndiceController extends Controller
     }
 
 
+
+
+
+
+//    //Return indice table in json format for the scene builder js.
+//    public function indices()
+//    {
+//        $indices=Indices::all();
+//        return view('amphi')->with('indices',$indices);
+//
+//    }
+
     //Return indice table in json format for the scene builder js.
     public function indices()
     {
-        $indices=Indices::all();
+        $indices=Indices::where('obj_text', Input::get('color'))->get();
+//        $indices=Indices::all();
         return view('amphi')->with('indices',$indices);
 
     }
