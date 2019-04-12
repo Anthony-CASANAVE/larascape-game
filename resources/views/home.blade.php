@@ -34,9 +34,18 @@
     </nav>
     {{--CONTENU--}}
     <div id="j21">
+        <div class="flash-message">
+            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                @if(Session::has('alert-' . $msg))
+
+                    <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                @endif
+            @endforeach
+        </div>
         <div class="row">
-            <div class="col-9">
+            <div class="col-9" id="amphi21">
 {{--            AMPHI INTEGRATION--}}
+
             </div>
             <div style="border-left: #4e555b 1px solid; margin-bottom: 10px;" class="col">
                 <form method="POST" action="{{ route('indices.store') }}">
@@ -97,6 +106,14 @@
         </div>
     </div>
     <div id="j22">
+        <div class="flash-message">
+            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                @if(Session::has('alert-' . $msg))
+
+                    <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                @endif
+            @endforeach
+        </div>
         <div class="row">
             <div class="col-9">
 {{--                AMPHI INTEGRATION--}}
