@@ -26,5 +26,6 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('indices','IndiceController');
+//
 
-Route::get('/scene','IndiceController@indices');
+Route::get('/scene','IndiceController@indices')->name('scene');

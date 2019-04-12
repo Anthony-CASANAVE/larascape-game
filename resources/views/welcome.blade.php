@@ -37,11 +37,11 @@
                 </div>
 
                 <div class="links">
-                    <a class="blue" href="{{ route('sceneBleu') }}">BLEU</a>
-                    <a class="red" href="{{ url('/sceneRouge') }}">ROUGE</a>
-                    <a class="green" href="{{ url('/sceneVert') }}">VERT</a>
-                    <a class="yellow" href="{{ url('/sceneJaune') }}">JAUNE</a>
-                    <a class="violet" href="{{ url('/sceneViolet') }}">VIOLET</a>
+                    <a class="blue"   href="{{ route('scene') }}">BLEU</a>
+                    <a class="red"    href="{{ route('scene') }}">ROUGE</a>
+                    <a class="green"  href="{{ route('scene') }}">VERT</a>
+                    <a class="yellow" href="{{ route('scene') }}">JAUNE</a>
+                    <a class="violet" href="{{ route('scene') }}">VIOLET</a>
                 </div>
             </div>
 
