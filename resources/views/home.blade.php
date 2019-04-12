@@ -44,7 +44,9 @@
         </div>
         <div class="row">
             <div class="col-9" id="amphi21">
-{{--            AMPHI INTEGRATION--}}
+
+                <div id="webgl"></div>
+                <script src="{{asset('js/sceneadmin.js')}}"></script>
 
             </div>
             <div style="border-left: #4e555b 1px solid; margin-bottom: 10px;" class="col">

@@ -71,7 +71,7 @@ class IndiceController extends Controller
 
             $rang_x=$request->get('rang_x'),
             $col_yz=$request->get('col_yz'),
-            
+
 
         ]);
             // Verification de l'existance de l'indice

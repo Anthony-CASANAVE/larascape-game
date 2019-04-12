@@ -12,6 +12,15 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{asset('js/three.js')}}"></script>
+
+    <script src="{{asset('js/OrbitControls.js')}}"></script>
+    <script src="{{asset('js/MTLLoader.js')}}"></script>
+    <script src="{{asset('js/OBJLoader.js')}}"></script>
+    <script src="{{asset('js/dat.gui.min.js')}}"></script>
+    <script>
+        var PHPtoJs = @json($indices);
+    </script>
 
     <script src="{{ asset('js/amphiadmin.js') }}"></script>
 
