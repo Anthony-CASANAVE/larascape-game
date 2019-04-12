@@ -19,9 +19,7 @@ class IndiceController extends Controller
     {
         //Recuperation de tout les indices existant en BDD
         $indices = Indices::all();
-        foreach ($indices as $indice) {
-            echo  $indice->xyz . '<br>';
-        }
+        return $indices;
     }
 
 
@@ -73,21 +71,19 @@ class IndiceController extends Controller
 
             $rang_x=$request->get('rang_x'),
             $col_yz=$request->get('col_yz'),
-
-            'xyz'=>($rang_x.'-'.$col_yz)
+            
 
         ]);
             // Verification de l'existance de l'indice
         if ((Indices::where('rang_x',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {
-
+            $request->session()->flash('alert-danger', 'Ces coordonées sont déjà utilisées !');
             return redirect()->route('home');
 
         }
         else {
             // Ajout de l'indice en BDD
             $indice->save();
-            echo "<script>alert(\"L'indice à été ajouté avec succès !\")</script>";
-
+            $request->session()->flash('alert-success', 'Indice ajouté avec succès');
             return redirect()->route('home');
         }
     }
