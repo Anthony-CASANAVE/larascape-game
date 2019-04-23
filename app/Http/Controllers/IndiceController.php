@@ -76,6 +76,7 @@ class IndiceController extends Controller
 
 
         ]);
+
             // Verification de l'existance de l'indice
         if ((Indices::where('xyz',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {
             $request->session()->flash('alert-danger', 'Ces coordonées sont déjà utilisées !');
@@ -83,7 +84,7 @@ class IndiceController extends Controller
 
         }
 
-
+        //Prevents user from adding negative numbers in the database.
         elseif (
             (Input::get('rang_x') < 1) || (Input::get('col_yz') < 1)
         )
@@ -92,6 +93,7 @@ class IndiceController extends Controller
             return redirect()->back();
         }
 
+        //Prevent user from adding tips out of model limits.
         elseif (
         (
             (Input::get('rang_x') > 11) || (Input::get('rang_x') > 38)
@@ -102,6 +104,7 @@ class IndiceController extends Controller
             return redirect()->back();
         }
 
+        //Prevents user from adding tips where there is no seats.
         elseif (
             (
                 (Input::get('rang_x') <= 3) || (Input::get('rang_x') >= 36)
@@ -115,6 +118,7 @@ class IndiceController extends Controller
             $request->session()->flash('alert-danger', "Ces coordonées désignent les couloirs d'entrée sur les cotés !");
             return redirect()->back();
         }
+
         else {
             // Ajout de l'indice en BDD
             $indice->save();

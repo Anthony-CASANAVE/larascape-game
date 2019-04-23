@@ -35,8 +35,6 @@ controls.enableDamping = false;
 controls.dampingFactor = 0.25;
 controls.enableRotate = false;
 controls.screenSpacePanning = true;
-controls.maxDistance = 300;
-controls.minDistance = 100;
 controls.enableZoom = false;
 controls.maxPolarAngle = Math.PI / 2;
 
