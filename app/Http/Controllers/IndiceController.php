@@ -89,18 +89,18 @@ class IndiceController extends Controller
             (Input::get('rang_x') < 1) || (Input::get('col_yz') < 1)
         )
         {
-            $request->session()->flash('alert-danger', "Arretez de chercher à faire buger le site avec des nombres négatifs, bande de petits sacripans !");
+            $request->session()->flash('alert-danger', "Arretez de chercher à faire buger le site avec des nombres négatifs ou de lettres, bande de petits sacripans !");
             return redirect()->back();
         }
 
         //Prevent user from adding tips out of model limits.
         elseif (
         (
-            (Input::get('rang_x') > 11) || (Input::get('rang_x') > 38)
+            (Input::get('col_yz') > 11) || (Input::get('rang_x') > 38)
         )
         )
         {
-            $request->session()->flash('alert-danger', "Il n'y a que 11 rangées et 28 colonne !");
+            $request->session()->flash('alert-danger', "Il n'y a que 11 rangées et 38 colonne !");
             return redirect()->back();
         }
 
