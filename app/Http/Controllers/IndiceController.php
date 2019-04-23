@@ -96,11 +96,11 @@ class IndiceController extends Controller
         //Prevent user from adding tips out of model limits.
         elseif (
         (
-            (Input::get('rang_x') > 11) || (Input::get('rang_x') > 38)
+            (Input::get('col_yz') > 11) || (Input::get('rang_x') > 38)
         )
         )
         {
-            $request->session()->flash('alert-danger', "Il n'y a que 11 rangées et 28 colonne !");
+            $request->session()->flash('alert-danger', "Il n'y a que 11 rangées et 38 colonne !");
             return redirect()->back();
         }
 
