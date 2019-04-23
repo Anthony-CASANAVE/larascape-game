@@ -29,21 +29,11 @@ clock = new THREE.Clock;
 
 
 
-//Setting up camera controls and its options.
-controls = new THREE.OrbitControls( camera, renderer.domElement );
-controls.enableDamping = false;
-controls.dampingFactor = 0.25;
-controls.enableRotate = false;
-controls.screenSpacePanning = true;
-controls.enableZoom = false;
-controls.maxPolarAngle = Math.PI / 2;
 
 
 camera.position.y = -15;
-controls.target.y = -15;
 camera.position.z = 310;
 camera.position.x = -150;
-controls.target.x = -150;
 camera.rotation.set( 0, 0, 0 );
 
 
@@ -135,33 +125,6 @@ function fogDensityControl() {
 
 
 
-//Teleporting the camera when reaching set boundaries.
-function cameraEdgeTeleportControl() {
-
-    if(controls.target.x > 90){
-        controls.target.x = -395;
-        camera.position.x = -395;
-
-    }
-
-    if(controls.target.x < -395){
-        controls.target.x = 90;
-        camera.position.x = 90;
-    }
-
-    if(controls.target.y > 90){
-        controls.target.y = -150;
-        camera.position.y = -150;
-    }
-
-    if(controls.target.y < -150){
-        controls.target.y = 90;
-        camera.position.y = 90;
-    }
-
-}
-
-
 
 function buildLights() {
 
@@ -185,8 +148,8 @@ function listenToWindowsSize() {
     //Updating size on rotate (For mobile) and on resize.
     window.addEventListener('resize', function(){
 
-        width = window.innerWidth;
-        weight = window.innerHeight;
+        width = window.innerWidth/1.9;
+        weight = window.innerHeight/1.5;
         renderer.setSize( width, weight );
         camera.aspect = width / weight;
         camera.updateProjectionMatrix();
@@ -368,13 +331,9 @@ animate = function () {
 
     listenToWindowsSize();
 
-    cameraEdgeTeleportControl();
 
     tipsRotationControl();
 
-    // fogDensityControl();
-
-    controls.update();
     renderer.render(scene, camera);
 
 };

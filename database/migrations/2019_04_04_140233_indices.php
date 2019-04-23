@@ -18,7 +18,7 @@ class Indices extends Migration
             $table->string('obj_text');
             $table->integer('rang_x');
             $table->integer('col_yz');
-            $table->integer('xyz')->unique();
+            $table->string('xyz')->unique();
     });
     }
 

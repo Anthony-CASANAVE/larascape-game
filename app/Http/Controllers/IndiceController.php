@@ -71,7 +71,7 @@ class IndiceController extends Controller
 
             $rang_x=$request->get('rang_x'),
             $col_yz=$request->get('col_yz'),
-
+        //concaténation des  deux colonne pour vérification de doublon
             'xyz'=>($rang_x.'-'.$col_yz)
 
 
@@ -167,6 +167,8 @@ class IndiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // suppresion de l'indice
     public function destroy($id)
 
     {
