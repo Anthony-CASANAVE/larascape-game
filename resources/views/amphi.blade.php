@@ -3,7 +3,7 @@
 <head>
 
     <meta charset=utf-8>
-    <title>My first three.js app</title>
+    <title>ENIGME DE L'AMPHI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
