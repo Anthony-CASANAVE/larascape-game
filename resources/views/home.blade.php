@@ -49,11 +49,11 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="selectrang">Selectionnez une colonne</label>
-                        <input type="text" class="form-control" id="selectrang" placeholder="Ex : 9" name="rang_x">
+                        <input type="text" class="form-control" id="selectrang" placeholder="Min: 1 , Max: 38" name="rang_x">
                     </div>
                     <div class="form-group">
                         <label for="selectcol">Selectionnez une rangée</label>
-                        <input type="text" class="form-control" id="selectcol" placeholder="Ex : 12" name="col_yz">
+                        <input type="text" class="form-control" id="selectcol" placeholder="Min: 1 , Max: 11" name="col_yz">
                     </div>
                     <div class="form-group">
                         <label for="#">Selectionnez la couleur d'équipe</label>
