@@ -13,18 +13,23 @@
 }
 .red{
     color:#FE0801;
+    border-color:#FE0801;
 }
 .green{
     color:#35FE01;
+    border-color:#35FE01;
 }
 .blue{
     color:#0157FE;
+    border-color:#0157FE;
 }
 .yellow{
     color:#FEEB01;
+    border-color:#FEEB01;
 }
 .violet{
     color:#E301FE;
+    border-color:#E301FE;
 }
 body{
     text-align: center;
@@ -93,5 +98,12 @@ html, body {
 .m-b-md {
     margin-bottom: 30px;
 }
+.links > form > button {
+    background-color: gray();
+}
+.links > form > button:hover {
+    background-color: darkgrey;
+}
+
 
 /*ANIMATION TEXT WELCOME*/

@@ -10,8 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <link href="{{asset('css/index.css')}}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{asset('css/index.css')}}" rel="stylesheet">
+
 
     </head>
     <body>
@@ -41,27 +42,27 @@
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button type="button" class="blue"   ><input type="hidden" name="color" value="Bl"> Bleu   </button>
+                        <button class="btn btn-lg btn-outline-success blue"   ><input type="hidden" name="color" value="Bl"> Bleu   </button>
                     </form>
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button class="red"    ><input type="hidden" name="color" value="Ro"> Rouge  </button>
+                        <button class="btn btn-lg btn-outline-success red"    ><input type="hidden" name="color" value="Ro"> Rouge  </button>
                     </form>
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button class="green"  ><input type="hidden" name="color" value="Ve"> Vert   </button>
+                        <button class="btn btn-lg btn-outline-success green"  ><input type="hidden" name="color" value="Ve"> Vert   </button>
                     </form>
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button class=" yellow" ><input type="hidden" name="color" value="Ja"> Jaune  </button>
+                        <button class="btn btn-lg btn-outline-success yellow" ><input type="hidden" name="color" value="Ja"> Jaune  </button>
                     </form>
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button class="violet" ><input type="hidden" name="color" value="Vi"> Violet </button>
+                        <button class="btn btn-lg btn-outline-success violet" ><input type="hidden" name="color" value="Vi"> Violet </button>
                     </form>
 
 
