@@ -48,17 +48,16 @@
                 <form method="POST" action="{{ route('indices.store') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="selectrang">Selectionnez une rangée</label>
+                        <label for="selectrang">Selectionnez une colonne</label>
                         <input type="text" class="form-control" id="selectrang" placeholder="Ex : 9" name="rang_x">
                     </div>
                     <div class="form-group">
-                        <label for="selectcol">Selectionnez une colonne</label>
+                        <label for="selectcol">Selectionnez une rangée</label>
                         <input type="text" class="form-control" id="selectcol" placeholder="Ex : 12" name="col_yz">
                     </div>
                     <div class="form-group">
                         <label for="#">Selectionnez la couleur d'équipe</label>
                         <select class="form-control" name="obj_text">
-                            <option selected>Choisissez ...</option>
                             <option value="Ro">Rouge</option>
                             <option value="Bl">Bleu</option>
                             <option value="Ja">Jaune</option>

@@ -11,6 +11,7 @@
 
         <!-- Styles -->
         <link href="{{asset('css/index.css')}}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     </head>
     <body>
@@ -40,7 +41,7 @@
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button class="blue"   ><input type="hidden" name="color" value="Bl"> Bleu   </button>
+                        <button type="button" class="blue"   ><input type="hidden" name="color" value="Bl"> Bleu   </button>
                     </form>
 
                     <form action="{{ route('scene') }}" method="POST">
@@ -55,7 +56,7 @@
 
                     <form action="{{ route('scene') }}" method="POST">
                         {{csrf_field()}}
-                        <button class="yellow" ><input type="hidden" name="color" value="Ja"> Jaune  </button>
+                        <button class=" yellow" ><input type="hidden" name="color" value="Ja"> Jaune  </button>
                     </form>
 
                     <form action="{{ route('scene') }}" method="POST">
