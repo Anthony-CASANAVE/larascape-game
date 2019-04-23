@@ -35,9 +35,9 @@ controls.enableDamping = false;
 controls.dampingFactor = 0.25;
 controls.enableRotate = false;
 controls.screenSpacePanning = true;
-controls.maxDistance = 310;
+controls.maxDistance = 300;
 controls.minDistance = 100;
-controls.enableZoom = true;
+controls.enableZoom = false;
 controls.maxPolarAngle = Math.PI / 2;
 
 
@@ -82,6 +82,7 @@ function objBuilder(objFile, mtlFile, posiX, posiY, posiZ, animated = true, text
 
             object.scale.x = object.scale.y = object.scale.z = 0.02;
 
+
             object.position.x = posiX;
             object.position.y = posiY;
             object.position.z = posiZ;
@@ -94,6 +95,7 @@ function objBuilder(objFile, mtlFile, posiX, posiY, posiZ, animated = true, text
 
                 object.matrixAutoUpdate  = true;
                 objectsToRotate.push(object);
+                object.scale.x = object.scale.y = object.scale.z = 0.035;
 
             }
 

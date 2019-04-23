@@ -32,7 +32,7 @@ class IndiceController extends Controller
     public function indices2()
     {
         $indices2=Indices::all();
-        return view('home')->with('indices',$indices2);
+        return view('home')->with('indices2',$indices2);
 
     }
 
@@ -78,14 +78,14 @@ class IndiceController extends Controller
             // Verification de l'existance de l'indice
         if ((Indices::where('rang_x',Input::get('rang_x'))->exists()) && (Indices::where('col_yz',Input::get('col_yz'))->exists())) {
             $request->session()->flash('alert-danger', 'Ces coordonées sont déjà utilisées !');
-            return redirect()->route('home');
+            return redirect()->back();
 
         }
         else {
             // Ajout de l'indice en BDD
             $indice->save();
             $request->session()->flash('alert-success', 'Indice ajouté avec succès');
-            return redirect()->route('home');
+            return redirect()->back();
         }
     }
 

@@ -10,24 +10,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a id="edit21" class="nav-link" href="{{ url('#') }}">{{ __("EDITER L'AMPHI J021") }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="edit22" class="nav-link" href="{{ url('#') }}">{{ __("EDITER L'AMPHI J022") }}</a>
-                    </li>
+                    PREVIEW
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
 {{--                    Création d'un compte administrateur supplémentaire--}}
-                    @if (Route::has('home'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __("Créer un compte admin supplémentaire") }}</a>
                         </li>
-                        @endif</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -44,9 +37,9 @@
         </div>
         <div class="row">
             <div class="col-9" id="amphi21">
-{{--                <script>--}}
-{{--                    var PHPtoJs = @json($indices2);--}}
-{{--                </script>--}}
+                <script>
+                    var PHPtoJs = @json($indices2);
+                </script>
                 <div id="webgl"></div>
                 <script src="{{asset('js/sceneadmin.js')}}"></script>
 

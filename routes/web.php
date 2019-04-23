@@ -23,12 +23,16 @@ Auth::routes();
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home','IndiceController@indices2')->name('indices.indices2');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/home','IndiceController@indices2')->name('indices.indices2');
+
+
 Route::resource('indices','IndiceController');
-//
+
 
 Route::post('/scene', 'IndiceController@indices')->name('scene');
+
 
