@@ -40,7 +40,6 @@ class IndiceController extends Controller
     public function indices()
     {
         $indices=Indices::where('obj_text', Input::get('color'))->get();
-//        $indices=Indices::all();
         return view('amphi')->with('indices',$indices);
 
     }
@@ -80,6 +79,39 @@ class IndiceController extends Controller
             $request->session()->flash('alert-danger', 'Ces coordonées sont déjà utilisées !');
             return redirect()->back();
 
+        }
+
+
+        elseif (
+            (Input::get('rang_x') < 1) || (Input::get('col_yz') < 1)
+        )
+        {
+            $request->session()->flash('alert-danger', "Arretez de chercher à faire buger le site avec des nombres négatifs, bande de petits sacripans !");
+            return redirect()->back();
+        }
+
+        elseif (
+        (
+            (Input::get('rang_x') > 11) || (Input::get('rang_x') > 38)
+        )
+        )
+        {
+            $request->session()->flash('alert-danger', "Il n'y a que 11 rangées et 28 colonne !");
+            return redirect()->back();
+        }
+
+        elseif (
+            (
+                (Input::get('rang_x') <= 3) || (Input::get('rang_x') >= 36)
+            )
+            &&
+            (
+                Input::get('col_yz') <= 6
+            )
+        )
+        {
+            $request->session()->flash('alert-danger', "Ces coordonées désignent les couloirs d'entrée sur les cotés !");
+            return redirect()->back();
         }
         else {
             // Ajout de l'indice en BDD
