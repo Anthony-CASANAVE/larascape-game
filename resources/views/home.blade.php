@@ -44,7 +44,9 @@
         </div>
         <div class="row">
             <div class="col-9" id="amphi21">
-
+{{--                <script>--}}
+{{--                    var PHPtoJs = @json($indices2);--}}
+{{--                </script>--}}
                 <div id="webgl"></div>
                 <script src="{{asset('js/sceneadmin.js')}}"></script>
 

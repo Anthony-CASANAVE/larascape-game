@@ -18,9 +18,9 @@
     <script src="{{asset('js/MTLLoader.js')}}"></script>
     <script src="{{asset('js/OBJLoader.js')}}"></script>
     <script src="{{asset('js/dat.gui.min.js')}}"></script>
-    <script>
-        var PHPtoJs = @json($indices);
-    </script>
+{{--    <script>--}}
+{{--        let PHPtoJs = @json($indices);--}}
+{{--    </script>--}}
 
     <script src="{{ asset('js/amphiadmin.js') }}"></script>
 

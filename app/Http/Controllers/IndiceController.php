@@ -7,6 +7,7 @@ use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Response;
 
 class IndiceController extends Controller
 {
@@ -27,13 +28,13 @@ class IndiceController extends Controller
 
 
 
-//    //Return indice table in json format for the scene builder js.
-//    public function indices()
-//    {
-//        $indices=Indices::all();
-//        return view('amphi')->with('indices',$indices);
-//
-//    }
+    //Return indice table in json format for the scene builder js.
+    public function indices2()
+    {
+        $indices2=Indices::all();
+        return view('home')->with('indices',$indices2);
+
+    }
 
     //Return indice table in json format for the scene builder js.
     public function indices()
