@@ -31,6 +31,48 @@
     color:#E301FE;
     border-color:#E301FE;
 }
+
+.red:hover{
+    color:#FE0801;
+    border-color:#FE0801;
+}
+.green:hover{
+    color:#35FE01;
+    border-color:#35FE01;
+}
+.blue:hover{
+    color:#0157FE;
+    border-color:#0157FE;
+}
+.yellow:hover{
+    color:#FEEB01;
+    border-color:#FEEB01;
+}
+.violet:hover{
+    color:#E301FE;
+    border-color:#E301FE;
+}
+
+.red:active{
+    background-color:#FE0801;
+    border-color:#FE0801;
+}
+.green:active{
+    color:#35FE01;
+    border-color:#35FE01;
+}
+.blue:active{
+    color:#0157FE;
+    border-color:#0157FE;
+}
+.yellow:active{
+    color:#FEEB01;
+    border-color:#FEEB01;
+}
+.violet:active{
+    color:#E301FE;
+    border-color:#E301FE;
+}
 body{
     text-align: center;
     background-color: black;
