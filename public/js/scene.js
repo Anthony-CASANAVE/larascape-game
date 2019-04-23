@@ -41,7 +41,7 @@ controls.dampingFactor = 0.25;
 controls.enableRotate = false;
 controls.screenSpacePanning = true;
 controls.maxDistance = 100;
-controls.minDistance = 10;
+controls.minDistance = 40;
 controls.enableZoom = true;
 controls.maxPolarAngle = Math.PI / 2;
 
@@ -128,7 +128,7 @@ function objBuilder(objFile, mtlFile, posiX, posiY, posiZ, animated = true, text
 function fogDensityControl() {
 
     cameraZoomValue = camera.position.z;
-    fogDensity = cameraZoomValue * 0.0003;
+    fogDensity = cameraZoomValue * 0.0002;
     scene.fog = new THREE.FogExp2( 0xcccccc, fogDensity );
 
 }
@@ -372,7 +372,7 @@ animate = function () {
 
     tipsRotationControl();
 
-    // fogDensityControl();
+    fogDensityControl();
 
     controls.update();
     renderer.render(scene, camera);
